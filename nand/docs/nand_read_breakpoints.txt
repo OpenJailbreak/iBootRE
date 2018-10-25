@@ -1,0 +1,46 @@
+blockdev_read_hook(bdev, destination, source, offset, size)
+Breakpoint 2: at 0x4ff1baf0
+ r0:  0x4ff35288  r1:  0x42000000  r2:  0x00000700  r3:   0x00000000
+ r4:  0x4ff1bae9  r5:  0x4ffb1208  r6:  0x4ffb1218  r7:   0x4ffb10b0
+ r8:  0x4ff2600c  r9:  0x4ff2a960  r10: 0x00000007  r11:  0x4ffb10e0
+ r12: 0x4ffb10a4  sp:  0x4ffb1098  lr:  0x400038a4  spsr: 0x60000173
+
+bdev_read_block(bdev, destination, blockStart, blockCount)
+Breakpoint 3: at 0x4ff0ec12
+ r0:  0x4ff35288  r1:  0x42000100  r2:  0x00000004  r3:   0x00000001
+ r4:  0x4ff0ec09  r5:  0x00000100  r6:  0x4ff35288  r7:   0x4ffb107c
+ r8:  0x00000200  r9:  0x00000003  r10: 0x00000700  r11:  0x00000100
+ r12: 0xd77d82c7  sp:  0x4ffb1054  lr:  0x4ff1bbe3  spsr: 0x60000173
+
+h2fmiReadBootpage(bank, page, destination
+Breakpoint 0: at 0x4ff0280e
+ r0:  0x00000000  r1:  0x00000401  r2:  0x4ff35300  r3:   0x00000000
+ r4:  0x4ff02801  r5:  0x00000000  r6:  0x00000401  r7:   0x4ffb104c
+ r8:  0x4ff2a434  r9:  0x4ff2a960  r10: 0x00000c03  r11:  0x4ff2a440
+ r12: 0x4ff29c10  sp:  0x4ffb1034  lr:  0x4ff0eccb  spsr: 0x80000173
+
+h2fmi_read_bootpage_pio(fmi, bank, page, destination
+Breakpoint 0: at 0x4ff0457a
+ r0:  0x4ff2ca50  r1:  0x00000000  r2:  0x00000401  r3:   0x4ff35300
+ r4:  0x4ff35300  r5:  0x00000000  r6:  0x4ff2ca50  r7:   0x4ffb102c
+ r8:  0x00000401  r9:  0x4ff2a960  r10: 0x00000000  r11:  0x4ff2a440
+ r12: 0x4ff29c10  sp:  0x4ffb1018  lr:  0x4ff0285d  spsr: 0x20000173
+
+h2fmi_pio_read_sector(fmi, destination, size,
+Breakpoint 0: at 0x4ff02d96
+ r0:  0x4ff2ca50  r1:  0x4ff35700  r2:  0x00000200  r3:   0x0000000c
+ r4:  0x4ff2ca50  r5:  0x00000002  r6:  0x4ff35700  r7:   0x4ffb1010
+ r8:  0x00000000  r9:  0x4ff2a960  r10: 0x00000000  r11:  0x4ff2a440
+ r12: 0x1a05a604  sp:  0x4ffb0ffc  lr:  0x4ff045e7  spsr: 0x00000173
+
+
+
+
+
+
+break add 0x4ff1baf0
+break add 0x4ff0ec12
+break add 0x4ff0280e
+break add 0x4ff0457a
+break add 0x4ff02d96
+bdev read nand_firmware 0x600 0x200 0x42000000

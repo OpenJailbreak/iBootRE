@@ -1,0 +1,53 @@
+Over usbmuxd on port 62078 (Unix Domain?)
+
+[Request]
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>iTunesHelper</string>
+  <key>Request</key>
+  <string>QueryType</string>
+</dict>
+</plist>
+
+[Response]
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Request</key>
+  <string>QueryType</string>
+  <key>Result</key>
+  <string>Success</string>
+  <key>Type</key>
+  <string>com.apple.mobile.lockdown</string>
+</dict>
+</plist>
+
+[Request]
+<dict>
+  <key>Label</key>
+  <string>iTunesHelper</string>
+  <key>PairRecord</key>
+  <dict>
+    <key>DeviceCertificate</key>
+    <data>
+        LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNOVENDQVIyZ0F3SUJBRVJUSUZJQ0FURS0tLS0tCg==
+    </data>
+    <key>HostCertificate</key>
+    <data>
+      LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN1akNDQWFLZ0F3SUJBUlRJRklDQVRFLS0tLS0K==
+    </data>
+    <key>HostID</key>
+    <string>D7......-....-....-....-........4EFE</string>
+    <key>RootCertificate</key>
+    <data>
+      LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNyVENDQVpXZ0F3SUJBNUVPRitjZVFNcUovZHBFdz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    </data>
+  </dict>
+  <key>Request</key>
+  <string>ValidatePair</string>
+</dict>
+

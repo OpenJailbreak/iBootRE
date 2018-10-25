@@ -1,0 +1,22 @@
+
+nand_read_block(void* bdev, void* destination, unsigned int blockStart, unsigned int blockSize)
+Breakpoint 0: at 0x4ff0ec12
+ r0:  0x4ff35288  r1:  0x4ffb3c40  r2:  0x00000003  r3:   0x00000001
+ r4:  0x4ff0ec09  r5:  0x00000000  r6:  0x4ff35288  r7:   0x42ffff50
+ r8:  0x00000100  r9:  0x4ff2a960  r10: 0x00000600  r11:  0x00000000
+ r12: 0x4ff2b944  sp:  0x42ffff28  lr:  0x4ff1bc2b  spsr: 0x20000173
+
+h2fmiReadBootPage(unsigned int block, unsigned int page, void* destination)
+Breakpoint 0: at 0x4ff0280e
+ r0:  0x00000000  r1:  0x00000400  r2:  0x4ff35300  r3:   0x00000000
+ r4:  0x4ff02801  r5:  0x00000000  r6:  0x00000400  r7:   0x42ffff20
+ r8:  0x4ff2a434  r9:  0x4ff2a960  r10: 0x00000c00  r11:  0x4ff2a440
+ r12: 0x4ff29c10  sp:  0x42ffff08  lr:  0x4ff0eccb  spsr: 0x80000173
+
+h2fmi_read_bootpage_pio(void* fmi, void* block, unsigned int page, void* destination)
+Breakpoint 0: at 0x4ff0457a
+ r0:  0x4ff2ca50  r1:  0x00000000  r2:  0x00000402  r3:   0x4ff35300
+ r4:  0x4ff35300  r5:  0x00000000  r6:  0x4ff2ca50  r7:   0x42ffff00
+ r8:  0x00000402  r9:  0x4ff2a960  r10: 0x00000000  r11:  0x4ff2a440
+ r12: 0x4ff29c10  sp:  0x42fffeec  lr:  0x4ff0285d  spsr: 0x20000173
+

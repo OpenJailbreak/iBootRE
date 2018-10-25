@@ -1,0 +1,32 @@
+NAND (Flash Root)
+    WMR (Whimory)
+    FTL (Flash_Translation_Layer? yaFTL?)
+        FIL
+        BUF
+        FPart
+    VFL (Virtual Flash Layer?)
+    
+h2fmi
+
+
+Files:
+drivers
+    flash_nand
+        Whimory2_1
+            Core
+                FTL
+                    FTLInterface.c
+                    
+                VFL
+                    VFLInterface.c
+                    VFLBuffer.c
+                    VSVFLInterface.c
+                    
+    apple
+        h2fmi
+            H2fmi.c
+            H2fmi_read.c
+            H2fmi_write.c
+            H2fmi_dma_iboot.c
+            H2fmi_misc.c
+            H2fmi_erase.c

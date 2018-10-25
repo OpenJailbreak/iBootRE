@@ -1,0 +1,20 @@
+# iRecovery hex to binary conversion
+sub irec_hex2bin(in,out)
+perl -e 'while(<>){($a,$b)=split(/:\s/);foreach(split(/\s+/,$b)){print(pack("H*",$_))}}' NOR_Dump.txt >NOR_Backup.bin
+
+# iRecovery error scanner
+sub irec_missing_line(in)
+perl -e '$prev=0;while(<>){($a,$b)=split(/:\s/);if(hex($a)!=$prev+16){print("Error $a\n")}$prev=hex($a);}' NOR_Dump.txt
+
+# Check for iRecovery missing nybble
+sub irec_missing_byte(in)
+perl -e 'while(<>){($a,$b)=split(/:\s/);foreach(split(/\s+/,$b)){print("ERROR: $a\n")unless(/^.{2}$/)}}' NOR_Dump.txt
+
+# Hexdump hex to binary conversion
+sub hex2bin(in,out)
+perl -e 'while(<>){($addr,$data1,$data2,$ascii)=split(/\s\s/);foreach(split(/\s/,$data1)){print(pack("H*",$_))}foreach(split(/\s/,$data2)){print(pack("H*",$_))}}' in.txt >out.bin
+
+# Tag creation routine
+sub genimg3tags(size,out) {
+	system("perl -e '$i=512;foreach(AAAA..FFFF){exit if($i==0);print(\"$_\".pack(\"I*\",16).\"\".pack(\"I*\",4).\"\".pack(\"H*\",\"FFFFFFFF\"));$i--;};' >tags.bin");
+}

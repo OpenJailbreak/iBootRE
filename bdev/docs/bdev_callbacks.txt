@@ -1,0 +1,13 @@
+nand_firmware:
+e9 ba f1 4f (0x4ff1bae9) blockdev_read_hook()
+09 ec f0 4f (0x4ff0ec09) default_block_read()
+59 b9 f1 4f (0x4ff1b959) blockdev_write_hook()
+31 b9 f1 4f (0x4ff1b931) default_block_write()
+a1 e9 f0 4f (0x4ff0e9a1) default_block_erase()
+
+nand0a:
+81 bc f1 4f (0x4ff1bc81) blockdev_read_hook()
+e1 bc f1 4f (0x4ff1bce1) default_block_read()
+69 bd f1 4f (0x4ff1bd69) blockdev_write_hook()
+c9 bd f1 4f (0x4ff1bdc9) default_block_write()
+1d b9 f1 4f (0x4ff1b91d) default_block_erase()

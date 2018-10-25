@@ -1,0 +1,234 @@
+] bgcolor task list
+(0x4ffc36b0) idleoff
+(0x4ffc1a08) command
+(0x4ffc1760) poweroff
+(0x4ffc12d0) usb
+(0x4ff4dbf0) *usb req
+(0x4ff2f958) main
+(0x4ff2f6b0) uart reader
+(0x4ff2c308) idle task
+
+] bgcolor task info idleoff
+Seaching for idleoff
+Found idleoff
+  identifier1 = 0x7461736b
+  taskList.prev = 0x4ff29328
+  taskList.next = 0x4ffc1a0c
+  runqueueList.prev = 0x00000000
+  runqueueList.next = 0x00000000
+  state = 4
+  criticalSectionNestCount = 2
+  registers.r4 = 0x4ff2c104
+  registers.r5 = 0x4ff29288
+  registers.r6 = 0x4ff2ca38
+  registers.r7 = 0x4ffc3914
+  registers.r8 = 0x00000000
+  registers.r9 = 0x00000000
+  registers.r10 = 0x00000000
+  registers.r11 = 0x00000000
+  registers.sp = 0x4ffc90c
+  registers.lr = 0x4ff191a9
+  exitState = 0x00000000
+  taskRoutine = 0x4ff00e7d
+  unknown_passed_value = 0x00000000
+  storage = 0x4ffc3750
+  storageSize = 0x00000200
+  taskName = idleoff
+  identifier2 = 0x74736b32
+  
+] bgcolor task info command
+Seaching for command
+Found command
+  identifier1 = 0x7461736b
+  taskList.prev = 0x4ffc36b4
+  taskList.next = 0x4ffc1764
+  runqueueList.prev = 0x4ff2bec8
+  runqueueList.next = 0x4ff2bec8
+  state = 3
+  criticalSectionNestCount = 3
+  registers.r4 = 0x4ff2c104
+  registers.r5 = 0x4ff29288
+  registers.r6 = 0x00000000
+  registers.r7 = 0x4ffc365c
+  registers.r8 = 0x00000000
+  registers.r9 = 0x00000000
+  registers.r10 = 0x00000000
+  registers.r11 = 0x00000000
+  registers.sp = 0x4ffc3654
+  registers.lr =0x4ff191a9
+  exitState = 0x00000000
+  taskRoutine = 0x4ff18d75
+  unknown_passed_value = 0x00000000
+  storage = 0x4ffc1aa8
+  storageSize = 0x00001c00
+  taskName = command
+  identifier2 = 0x74736b32
+  
+] bgcolor task info poweroff
+Seaching for poweroff
+Found poweroff
+  identifier1 = 0x7461736b
+  taskList.prev = 0x4ffc1a0c
+  taskList.next = 0x4ffc12d4
+  runqueueList.prev = 0x00000000
+  runqueueList.next = 0x00000000
+  state = 4
+  criticalSectionNestCount = 2
+  registers.r4 = 0x4ff2c104
+  registers.r5 = 0x4ff29288
+  registers.r6 = 0x00000000
+  registers.r7 = 0x4ffc19c8
+  registers.r8 = 0x00000000
+  registers.r9 = 0x00000000
+  registers.r10 = 0x00000000
+  registers.r11 = 0x00000000
+  registers.sp = 0x4fc19c0
+  registers.lr = 0x4ff191a9
+  exitState = 0x00000000
+  taskRoutine = 0x4ff00ee1
+  unknown_passed_value = 0x00000000
+  storage = 0x4ffc1800
+  storageSize = 0x00000200
+  taskName = poweroff
+  identifier2 = 0x74736b32
+  
+] bgcolor task info usb
+Seaching for usb
+Found usb
+  identifier1 = 0x7461736b
+  taskList.prev = 0x4ffc1764
+  taskList.next = 0x4ff4dbf4
+  runqueueList.prev = 0x4ff2c4a8
+  runqueueList.next = 0x4ff2c4a8
+  state = 3
+  criticalSectionNestCount = 3
+  registers.r4 = 0x4ff2c104
+  registers.r5 = 0x4ff29288
+  registers.r6 = 0x00000000
+  registers.r7 = 0x4ffc153c
+  registers.r8 = 0x00000000
+  registers.r9 = 0x00000000
+  registers.r10 = 0x00000000
+  registers.r11 = 0x00000000
+  registers.sp = 0x4ffc1534
+ registers.lr = 0x4ff191a9
+  exitState = 0x00000000
+  taskRoutine = 0x4ff1abdd
+  unknown_passed_value = 0x00000000
+  storage = 0x4ffc1370
+  storageSize = 0x00000200
+  taskName = usb
+  identifier2 = 0x74736b32
+  
+] bgcolor task info main
+Seaching for main
+Found main
+  identifier1 = 0x7461736b
+  taskList.prev = 0x4ff4dbf4
+  taskList.next = 0x4ff2f6b4
+  runqueueList.prev = 0x00000000
+  runqueueList.next = 0x00000000
+  state = 5
+  criticalSectionNestCount = 1
+  registers.r4 = 0x4ff2c104
+  registers.r5 = 0x4ff29288
+  registers.r6 = 0x00000000
+  registers.r7 = 0x4ff315dc
+  registers.r8 = 0x00000000
+  registers.r9 = 0x4ff2a960
+  registers.r10 = 0x00000000
+  registers.r11 = 0x00000000
+  registers.sp = 0x4ff315d4
+  registers.lr = 0x4ff191a9
+  exitState = 0xffffffff
+  taskRoutine = 0x4ff00ac9
+  unknown_passed_value = 0x00000000
+  storage = 0x4ff2f9f8
+  storageSize = 0x00001c00
+  taskName = main
+  identifier2 = 0x74736b32
+  
+] bgcolor task info uart reader
+Seaching for uart reader
+Found uart reader
+  identifier1 = 0x7461736b
+  taskList.prev = 0x4ff2f95c
+  taskList.next = 0x4ff2c30c
+  runqueueList.prev = 0x4ff2a99c
+  runqueueList.next = 0x4ff2a99c
+  state = 3
+  criticalSectionNestCount = 3
+  registers.r4 = 0x4ff2c104
+  registers.r5 = 0x4ff29288
+  registers.r6 = 0x4ff27744
+  registers.r7 = 0x4ff2f8d8
+  registers.r8 = 0x00000001
+  registers.r9 = 0x00000000
+  registers.r10 = 0x00000001
+  registers.r11 = 0x4ff2a960
+  registers.sp = 0x4ff2f8d0
+  registers.r = 0x4ff191a9
+  exitState = 0x00000000
+  taskRoutine = 0x4ff11abd
+  unknown_passed_value = 0x00000000
+  storage = 0x4ff2f750
+  storageSize = 0x00000200
+  taskName = uart reader
+  identifier2 = 0x74736b32
+  
+] bgcolor task info idle task
+Seaching for idle task
+Found idle task
+  identifier1 = 0x7461736b
+  taskList.prev = 0x4ff2f6b4
+  taskList.next = 0x4ff29328
+  runqueueList.prev = 0x00000000
+  runqueueList.next = 0x00000000
+  state = 2
+  criticalSectionNestCount = 1
+  registers.r4 = 0x4ff2c104
+  registers.r5 = 0x4ff29288
+  registers.r6 = 0x4ff2c39c
+  registers.r7 = 0x4ff2c2dc
+  registers.r8 = 0x4ff2c104
+  registers.r9 = 0x00000000
+  registers.r10 = 0x00000000
+  registers.r11 = 0x00000000
+  registers.sp = 0xff2c2d4
+  registers.lr = 0x4ff191a9
+  exitState = 0x00000000
+  taskRoutine = 0x4ff192fd
+  unknown_passed_value = 0x00000000
+  storage = 0x4ff2c108
+  storageSize = 0x00000200
+  taskName = idle task
+  identifier2 = 0x74736b32
+  
+] bgcolor task info command
+Seaching for command
+Found command
+  identifier1 = 0x7461736b
+  taskList.prev = 0x4ffc36b4
+  taskList.next = 0x4ffc1764
+  runqueueList.prev = 0x4ff2bec8
+  runqueueList.next = 0x4ff2bec8
+  state = 3
+  criticalSectionNestCount = 3
+  registers.r4 = 0x4ff2c104
+  registers.r5 = 0x4ff29288
+  registers.r6 = 0x00000000
+  registers.r7 = 0x4ffc365c
+  registers.r8 = 0x00000000
+  registers.r9 = 0x00000000
+  registers.r10 = 0x00000000
+  registers.r11 = 0x00000000
+  registers.sp = 0x4ffc654
+  registers.lr = 0x4ff191a9
+  exitState = 0x00000000
+  taskRoutine = 0x4ff18d75
+  unknown_passed_value = 0x00000000
+  storage = 0x4ffc1aa8
+  storageSize = 0x00001c00
+  taskName = command
+  identifier2 = 0x74736b32
+

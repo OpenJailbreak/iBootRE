@@ -1,0 +1,21 @@
+typedef struct BdevDescriptor {
+    struct BdevDescriptor nextBdev;
+    void* unk1;
+    unsigned int blockSize;
+    unsigned int numOfBlocks;
+    unsigned int unk2
+    unsigned long long logicalSize
+    void(*blockdev_read_hook)();
+    void(*default_block_read)();
+    void(*blockdev_write_hook)();
+    void(*default_block_write)();
+    void(*default_block_erase)();
+    char bdevName[0x10];
+} BdevDescriptor;
+
+typedef struct GrdnPartition {
+    unsigned int partitionType;
+    unsigned int startBlock;
+    unsigned int numOfBlocks;
+    unsigned int state;
+}

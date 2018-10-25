@@ -1,0 +1,274 @@
+bsd/crypto/des/des_ecb.c:                snprintf(buf, sizeof(buf), "des(%s,%s,%s,%s)",
+bsd/netinet6/ipsec.c:	snprintf(buf, sizeof(buf), "packet(SPI=%u ", (u_int32_t)ntohl(spi));
+bsd/netinet6/ipsec.c:	snprintf(p, sizeof(buf) - (p - buf), "src=%u.%u.%u.%u",
+bsd/netinet6/ipsec.c:	snprintf(p, sizeof(buf) - (p - buf), " dst=%u.%u.%u.%u",
+bsd/netinet6/ipsec.c:	snprintf(p, sizeof(buf) - (p - buf), ")");
+bsd/netinet6/ipsec.c:	snprintf(buf, sizeof(buf), "packet(SPI=%u ", (u_int32_t)ntohl(spi));
+bsd/netinet6/ipsec.c:	snprintf(p, sizeof(buf) - (p - buf), "src=%s",
+bsd/netinet6/ipsec.c:	snprintf(p, sizeof(buf) - (p - buf), " dst=%s",
+bsd/netinet6/ipsec.c:	snprintf(p, sizeof(buf) - (p - buf), ")");
+bsd/netinet6/ipsec.c:	snprintf(buf, sizeof(buf), "SA(SPI=%u ", (u_int32_t)ntohl(sav->spi));
+bsd/netinet6/ipsec.c:		snprintf(p, sizeof(buf) - (p - buf),
+bsd/netinet6/ipsec.c:		snprintf(p, sizeof(buf) - (p - buf),
+bsd/netinet6/ipsec.c:		snprintf(p, sizeof(buf) - (p - buf),
+bsd/netinet6/ipsec.c:	snprintf(p, sizeof(buf) - (p - buf), ")");
+bsd/netinet6/ip6_fw.c:	snprintf(SNPARGS(name, 0), "ip6fw: %d", f ? f->fw_number : -1);
+bsd/netinet6/ip6_fw.c:			snprintf(SNPARGS(action2, 0), "Divert %d",
+bsd/netinet6/ip6_fw.c:			snprintf(SNPARGS(action2, 0), "Tee %d",
+bsd/netinet6/ip6_fw.c:			snprintf(SNPARGS(action2, 0), "SkipTo %d",
+bsd/netinet6/ip6_fw.c:		len = snprintf(SNPARGS(proto, 0), "TCP [%s]",
+bsd/netinet6/ip6_fw.c:			len += snprintf(SNPARGS(proto, len), ":%d ",
+bsd/netinet6/ip6_fw.c:			len += snprintf(SNPARGS(proto, len), " ");
+bsd/netinet6/ip6_fw.c:		len += snprintf(SNPARGS(proto, len), "[%s]",
+bsd/netinet6/ip6_fw.c:			snprintf(SNPARGS(proto, len), ":%d",
+bsd/netinet6/ip6_fw.c:		len = snprintf(SNPARGS(proto, 0), "UDP [%s]",
+bsd/netinet6/ip6_fw.c:			len += snprintf(SNPARGS(proto, len), ":%d ",
+bsd/netinet6/ip6_fw.c:		    len += snprintf(SNPARGS(proto, len), " ");
+bsd/netinet6/ip6_fw.c:		len += snprintf(SNPARGS(proto, len), "[%s]",
+bsd/netinet6/ip6_fw.c:			snprintf(SNPARGS(proto, len), ":%d",
+bsd/netinet6/ip6_fw.c:			len = snprintf(SNPARGS(proto, 0), "IPV6-ICMP:%u.%u ",
+bsd/netinet6/ip6_fw.c:			len = snprintf(SNPARGS(proto, 0), "IPV6-ICMP ");
+bsd/netinet6/ip6_fw.c:		len += snprintf(SNPARGS(proto, len), "[%s]",
+bsd/netinet6/ip6_fw.c:		snprintf(SNPARGS(proto, len), " [%s]",
+bsd/netinet6/ip6_fw.c:		len = snprintf(SNPARGS(proto, 0), "P:%d [%s]", nxt,
+bsd/netinet6/ip6_fw.c:		snprintf(SNPARGS(proto, len), " [%s]",
+bsd/netinet6/icmp6.c:	snprintf(buf, sizeof(buf), "(src=%s dst=%s tgt=%s)",
+bsd/netinet/ip_fw2.c:        loglen = vsnprintf(msgBuf, msgsize, format, ap);
+bsd/netinet/ip_fw2.c:				snprintf(SNPARGS(action2, 0), "Unreach %d",
+bsd/netinet/ip_fw2.c:			snprintf(SNPARGS(action2, 0), "Divert %d",
+bsd/netinet/ip_fw2.c:			snprintf(SNPARGS(action2, 0), "Tee %d",
+bsd/netinet/ip_fw2.c:			snprintf(SNPARGS(action2, 0), "SkipTo %d",
+bsd/netinet/ip_fw2.c:			snprintf(SNPARGS(action2, 0), "Pipe %d",
+bsd/netinet/ip_fw2.c:			snprintf(SNPARGS(action2, 0), "Queue %d",
+bsd/netinet/ip_fw2.c:			len = snprintf(SNPARGS(action2, 0), "Forward to %s",
+bsd/netinet/ip_fw2.c:				snprintf(SNPARGS(action2, len), ":%d",
+bsd/netinet/ip_fw2.c:		snprintf(SNPARGS(proto, 0), "MAC");
+bsd/netinet/ip_fw2.c:			len = snprintf(SNPARGS(proto, 0), "TCP %s",
+bsd/netinet/ip_fw2.c:				snprintf(SNPARGS(proto, len), ":%d %s:%d",
+bsd/netinet/ip_fw2.c:				snprintf(SNPARGS(proto, len), " %s",
+bsd/netinet/ip_fw2.c:			len = snprintf(SNPARGS(proto, 0), "UDP %s",
+bsd/netinet/ip_fw2.c:				snprintf(SNPARGS(proto, len), ":%d %s:%d",
+bsd/netinet/ip_fw2.c:				snprintf(SNPARGS(proto, len), " %s",
+bsd/netinet/ip_fw2.c:				len = snprintf(SNPARGS(proto, 0),
+bsd/netinet/ip_fw2.c:				len = snprintf(SNPARGS(proto, 0), "ICMP ");
+bsd/netinet/ip_fw2.c:			len += snprintf(SNPARGS(proto, len), "%s",
+bsd/netinet/ip_fw2.c:			snprintf(SNPARGS(proto, len), " %s",
+bsd/netinet/ip_fw2.c:			len = snprintf(SNPARGS(proto, 0), "P:%d %s", ip->ip_p,
+bsd/netinet/ip_fw2.c:			snprintf(SNPARGS(proto, len), " %s",
+bsd/netinet/ip_fw2.c:			snprintf(SNPARGS(fragment, 0), " (frag %d:%d@%d%s)",
+bsd/netinet/in_arp.c:		snprintf(buf, 3, "%02x", lladdr[i]);
+bsd/netinet/ip_dummynet.c:	snprintf(buf, sizeof(buf), "%s%d",ifp->if_name, ifp->if_unit);
+bsd/netinet/in_dhcp.c:    snprintf(context->ifr.ifr_name, 
+bsd/netinet/ip_divert.c:		snprintf(divsrc.sin_zero, sizeof(divsrc.sin_zero),
+bsd/kern/kern_proc.c:				snprintf(id_buf, sizeof(id_buf), "%u", pid);
+bsd/kern/kern_proc.c:				snprintf(id_buf, sizeof(id_buf), "%u", uid);
+bsd/kern/kern_exec.c:		snprintf(temp, sizeof(temp), "/dev/fd/%d", fd);
+bsd/kern/kern_event.c:        snprintf(s, n,
+bsd/kern/kern_core.c:		snprintf(stack_name, sizeof(stack_name),
+bsd/kern/subr_sbuf.c:		len = vsnprintf(&s->s_buf[s->s_len], SBUF_FREESPACE(s) + 1,
+bsd/kern/subr_sbuf.c:	 * we passed into vsnprintf() because that length includes the
+bsd/kern/subr_sbuf.c:	 * vsnprintf() returns the amount that would have been copied,
+bsd/kern/mcache.c:		(void) snprintf(name, sizeof (name), "bkt_%d",
+bsd/kern/mcache.c:	(void) snprintf(cp->mc_name, sizeof (cp->mc_name), "mcache.%s", name);
+bsd/kern/mcache.c:	(void) snprintf(lck_name, sizeof (lck_name), "%s.cpu", cp->mc_name);
+bsd/kern/mcache.c:	(void) snprintf(lck_name, sizeof (lck_name), "%s.bkt", cp->mc_name);
+bsd/kern/mcache.c:	(void) snprintf(lck_name, sizeof (lck_name), "%s.sync", cp->mc_name);
+bsd/kern/mcache.c:	snprintf(mca_dump_buf, DUMP_MCA_BUF_SIZE,
+bsd/kern/subr_prf.c:struct snprintf_arg {
+bsd/kern/subr_prf.c:snprintf_func(int ch, void *arg);
+bsd/kern/subr_prf.c: *	vsprintf() is being deprecated. Please use vsnprintf() instead. 
+bsd/kern/subr_prf.c:	struct snprintf_arg info;
+bsd/kern/subr_prf.c:	retval = __doprnt(cfmt, ap, snprintf_func, &info, 10);
+bsd/kern/subr_prf.c: * Scaled down version of snprintf(3).
+bsd/kern/subr_prf.c:snprintf(char *str, size_t size, const char *format, ...)
+bsd/kern/subr_prf.c:	retval = vsnprintf(str, size, format, ap);
+bsd/kern/subr_prf.c: * Scaled down version of vsnprintf(3).
+bsd/kern/subr_prf.c:vsnprintf(char *str, size_t size, const char *format, va_list ap)
+bsd/kern/subr_prf.c:	struct snprintf_arg info;
+bsd/kern/subr_prf.c:	retval = __doprnt(format, ap, snprintf_func, &info, 10);
+bsd/kern/subr_prf.c:snprintf_func(int ch, void *arg)
+bsd/kern/subr_prf.c:	struct snprintf_arg *const info = arg;
+bsd/kern/tty_pty.c:			snprintf(data, 128, "/dev/tty%c%x",
+bsd/kern/kern_newsysctl.c:			snprintf(tempbuf,sizeof(tempbuf),"%d",*name);
+bsd/kern/uipc_socket.c:                n += snprintf(lock_history_str + n, SO_LOCK_HISTORY_STR_LEN - n, "%lx:%lx ",
+bsd/kern/tty_ptmx.c:		snprintf(name, sizeof(name), "/dev/%s", direntp->de_name);
+bsd/kern/tty_ptmx.c:			snprintf(data, 128, "/dev/" PTSD_TEMPLATE, minor(dev));
+bsd/kern/kern_shutdown.c:	len = vsnprintf(logbuf, sizeof(logbuf), fmt, arglist);
+bsd/kern/netboot.c:    snprintf(ifr.ifr_name, sizeof(ifr.ifr_name), "%s%d", ifp->if_name,
+bsd/kern/uipc_mbuf.c:			(void) snprintf(oc->mbcl_cname, sizeof (oc->mbcl_cname),
+bsd/kern/uipc_mbuf.c:	(void) snprintf(m_cname(MC_CL), MAX_MBUF_CNAME, "cl");
+bsd/kern/uipc_mbuf.c:	(void) snprintf(m_cname(MC_MBUF), MAX_MBUF_CNAME, "mbuf");
+bsd/kern/uipc_mbuf.c:	(void) snprintf(m_cname(MC_BIGCL), MAX_MBUF_CNAME, "bigcl");
+bsd/kern/uipc_mbuf.c:	(void) snprintf(m_cname(MC_MBUF_CL), MAX_MBUF_CNAME, "mbuf_cl");
+bsd/kern/uipc_mbuf.c:	(void) snprintf(m_cname(MC_MBUF_BIGCL), MAX_MBUF_CNAME, "mbuf_bigcl");
+bsd/kern/uipc_mbuf.c:	(void) snprintf(m_cname(MC_16KCL), MAX_MBUF_CNAME, "16kcl");
+bsd/kern/uipc_mbuf.c:	(void) snprintf(m_cname(MC_MBUF_16KCL), MAX_MBUF_CNAME, "mbuf_16kcl");
+bsd/vfs/vfs_fslog.c:		snprintf(fmt, MAX_FMT_LEN, "%s [%s %d] [%s %d] [%s %s] ",
+bsd/vfs/vfs_fslog.c:		snprintf(fmt, MAX_FMT_LEN, "%s [%s %d] [%s %d] ", 
+bsd/vfs/vfs_fslog.c:			snprintf((fmt + offset), len + 1, FSLOG_KEYVAL_FMT, key, val);
+bsd/vfs/vfs_fslog.c:		snprintf(msg_id_str, sizeof(msg_id_str), "%lu", msg_id);
+bsd/vfs/vfs_fslog.c:	snprintf (errno_str, sizeof(errno_str), "%d", buf_error(bp));
+bsd/vfs/vfs_fslog.c:	snprintf (blknum_str, sizeof(blknum_str), "%lld", buf_blkno(bp));
+bsd/vfs/vfs_fslog.c:	snprintf (lblknum_str, sizeof(lblknum_str), "%lld", buf_lblkno(bp));
+bsd/vfs/vfs_xattr.c:	snprintf((NAME), sizeof((NAME)), ".vfs_rsrc_stream_%p%08x%p", (void*)(VP), (VP)->v_id, (VP)->v_data);
+bsd/vfs/vfs_xattr.c:	snprintf(tmpname, sizeof(tmpname), ".vfs_rsrc_streams_%p%x",
+bsd/vfs/vfs_xattr.c:		snprintf(filename, sizeof(smallname), "%s%s", ATTR_FILE_PREFIX, ".");
+bsd/vfs/vfs_xattr.c:	len = snprintf(filename, sizeof(smallname), "%s%s", ATTR_FILE_PREFIX, basename);
+bsd/vfs/vfs_xattr.c:		len++;  /* snprintf result doesn't include '\0' */
+bsd/vfs/vfs_xattr.c:		len = snprintf(filename, len, "%s%s", ATTR_FILE_PREFIX, basename);
+bsd/vfs/vfs_syscalls.c:		snprintf(qfpath, sizeof(qfpath), "%s/%s.%s", mp->mnt_vfsstat.f_mntonname, qfopsname, qfextension[type]);
+bsd/vfs/vfs_syscalls.c:		snprintf(qfpath, sizeof(qfpath),  "%s/%s.%s", mp->mnt_vfsstat.f_mntonname, qfname, qfextension[type]);
+bsd/vfs/kpi_vfs.c:	len = snprintf(filename, sizeof(smallname), "._%s", basename);
+bsd/vfs/kpi_vfs.c:		len++;  /* snprintf result doesn't include '\0' */
+bsd/vfs/kpi_vfs.c:		len = snprintf(filename, len, "._%s", basename);
+bsd/vfs/kpi_vfs.c:	len = snprintf(filename, sizeof(smallname), "._%s", basename);
+bsd/vfs/kpi_vfs.c:		len++;  /* snprintf result doesn't include '\0' */
+bsd/vfs/kpi_vfs.c:		len = snprintf(filename, len, "._%s", basename);
+bsd/dev/vn/vn.c:	snprintf(devname, 16, "vn%d", ROOT_IMAGE_UNIT);
+bsd/dev/dtrace/fasttrap.c:	if (snprintf(provname, sizeof (provname), "%s%u", name, (uint_t)pid) >=
+bsd/dev/dtrace/fasttrap.c:			(void) snprintf(name_str, sizeof(name_str), "%llx",
+bsd/dev/dtrace/profile_prvd.c:			(void) snprintf(n, PROF_NAMELEN, "%s%d",
+bsd/dev/dtrace/profile_prvd.c:			(void) snprintf(n, PROF_NAMELEN, "%s%d",
+bsd/dev/dtrace/dtrace.c:	(void) snprintf(c, sizeof (c), "dtrace_aggid_%d", minor);
+bsd/dev/dtrace/dtrace.c:		(void) snprintf(c, sizeof (c), "dof-data-%d", i);
+bsd/miscfs/devfs/devfs_fdesc_support.c:			dp->d_namlen = snprintf(dp->d_name, sizeof(dp->d_name),
+bsd/miscfs/devfs/devfs_tree.c:	vsnprintf(buf, sizeof(buf), fmt, ap);
+bsd/miscfs/devfs/devfs_tree.c:	vsnprintf(buf, sizeof(buf), fmt, ap);
+bsd/libkern/libkern.h:int	snprintf(char *, size_t, const char *, ...) __printflike(3,4);
+bsd/libkern/libkern.h:/* sprintf() is being deprecated. Please use snprintf() instead. */
+bsd/libkern/libkern.h:extern int	vsnprintf(char *, size_t, const char *, va_list);
+bsd/libkern/libkern.h:/* vsprintf() is being deprecated. Please use vsnprintf() instead. */
+bsd/libkern/inet_ntop.c:	 * snprintf returns number of bytes printed (not including NULL) or
+bsd/libkern/inet_ntop.c:	fulllen = snprintf(tmp, sizeof(tmp), "%d.%d.%d.%d",
+bsd/libkern/inet_ntop.c:		len = snprintf(tmp, sizeof(tmp), "::%s%s", (i != 0) ? "ffff:" : "",
+bsd/hfs/hfs_vfsutils.c:		(void) snprintf(tempname, sizeof(tempname), "%s%d",
+bsd/hfs/hfs.h:	    (void) snprintf((name), size, "%s%d", HFS_INODE_PREFIX, (linkno))
+bsd/hfs/hfs.h:	    (void) snprintf((name), size, "%s%d", HFS_DIRINODE_PREFIX, (linkno))
+bsd/hfs/hfs.h:	    (void) snprintf((NAME), size, "%s%d", HFS_DELETE_PREFIX, (FID))
+bsd/hfs/hfs_link.c:	(void)snprintf((char *)&dataptr->attrData[0],
+bsd/hfs/hfscommon/Unicode/UnicodeWrappers.c:	snprintf(fileIDStr, sizeof(fileIDStr), "#%X", cnid);
+bsd/hfs/hfs_vnops.c:			cn.cn_namelen = snprintf(cn.cn_nameptr, MAXPATHLEN,
+bsd/net/dlil.c:		snprintf(inputthread->input_name, 32, "dlil_input_%s%d_mtx", ifp->if_name, ifp->if_unit);	
+bsd/net/dlil.c:		namelen = snprintf(workbuf, sizeof(workbuf), "%s%d", ifp->if_name, ifp->if_unit);
+bsd/net/if_vlan.c:	if ((unsigned int)snprintf(ifv->ifv_name, sizeof(ifv->ifv_name), "%s%d",
+bsd/net/if_vlan.c:    snprintf(ifmr.ifm_name, sizeof(ifmr.ifm_name),
+bsd/net/if_vlan.c:	    snprintf(vlr.vlr_parent, sizeof(vlr.vlr_parent),
+bsd/net/if_bond.c:    snprintf(ifr.ifr_name, sizeof(ifr.ifr_name), "%s%d", ifnet_name(ifp),
+bsd/net/if_bond.c:	snprintf(ifname, sizeof(ifname), "en%d", i);
+bsd/net/if_bond.c:	if ((u_int32_t)snprintf(ifb->ifb_name, sizeof(ifb->ifb_name), "%s%d",
+bsd/net/if_bond.c:    if ((u_int32_t)snprintf(p->po_name, sizeof(p->po_name), "%s%d",
+bsd/net/if_mib.c:		snprintf(ifmd.ifmd_name, sizeof(ifmd.ifmd_name), "%s%d",
+bsd/net/if.c:		if (snprintf(dp, len - (dp-name), "%d", unit) >
+bsd/net/if.c:		ifnlen = snprintf(workbuf, sizeof(workbuf),
+bsd/net/bpf.c:			snprintf(ifr->ifr_name, sizeof(ifr->ifr_name),
+bsd/net/net_osdep.c:	snprintf(cp, IFNAMSIZ + 10, "%s%d", ifp->if_name, ifp->if_unit);
+bsd/net/if_utun.c:		snprintf(ifr.ifr_name, sizeof(ifr.ifr_name), "%s%d",
+bsd/net/if_utun.c:		snprintf(ifr6.ifr_name, sizeof(ifr6.ifr_name), "%s%d",
+bsd/net/if_utun.c:		snprintf(ifr.ifr_name, sizeof(ifr.ifr_name), "%s%d",
+bsd/net/if_utun.c:		snprintf(ifr6.ifr_name, sizeof(ifr6.ifr_name), "%s%d",
+bsd/net/if_utun.c:			*len = snprintf(data, *len, "%s%d", ifnet_name(pcb->ifp), ifnet_unit(pcb->ifp)) + 1;
+bsd/net/pf_if.c:	(void) snprintf(if_name, sizeof (if_name), "%s%d",
+bsd/net/pf_if.c:		snprintf(tblname + strlen(tblname),
+bsd/security/audit/audit_session.c:	snprintf(nm, sizeof(nm), "audit se_klist_mtx %d", asid);
+bsd/netat/asp_proto.c:				snprintf(era, sizeof(era), "%d.%d", scb->rem_addr.node,scb->rem_addr.socket);
+bsd/netat/asp_proto.c:				snprintf(ra, sizeof(ra), "%d.%d", rem_addr.node,rem_addr.socket);
+bsd/nfs/nfs4_vnops.c:	namelen = snprintf(filename, sizeof(smallname), "%s", vname);
+bsd/nfs/nfs4_vnops.c:		namelen++;  /* snprintf result doesn't include '\0' */
+bsd/nfs/nfs4_vnops.c:		snprintf(filename, namelen, "%s", vname);
+bsd/nfs/nfs4_vnops.c:	namelen = snprintf(filename, sizeof(smallname), "%s", vname);
+bsd/nfs/nfs4_vnops.c:		namelen++;  /* snprintf result doesn't include '\0' */
+bsd/nfs/nfs4_vnops.c:		snprintf(filename, namelen, "%s", vname);
+bsd/nfs/nfs_boot.c:			snprintf(check_path, MAXPATHLEN, "%s/private", nd->nd_root.ndm_path);
+bsd/nfs/nfs_gss.c:			snprintf(p, 4, "%02x ", d[i + j]);
+bsd/nfs/nfs_vnops.c:	nsp->nsr_namlen = snprintf(nsp->nsr_name, sizeof(nsp->nsr_name),
+bsd/nfs/nfs_vnops.c:		nsp->nsr_namlen = snprintf(nsp->nsr_name, sizeof(nsp->nsr_name),
+bsd/nfs/nfs_vnops.c:	snprintf(dulp->du_cn.cn_nameptr, du_namelen + 1, "._%s", name);
+bsd/nfs/nfs_vfsops.c:				snprintf(statrec.path, sizeof(statrec.path), "%s%s%s",
+bsd/nfs/nfs_vfsops.c:					snprintf(upath_rec.path, sizeof(upath_rec.path), "%s%s%s",
+bsd/nfs/nfsm_subs.h:			snprintf(__nfstag, sizeof(__nfstag), "%-*s", NFS4_TAG_LENGTH, (TAG)); \
+bsd/nfs/nfs4_subs.c:		ralen = snprintf(raddr, sizeof(raddr), "%d.%d.%d.%d.%d.%d", 
+bsd/nfs/nfs4_subs.c:			slen = snprintf(s, sizeof(s), "root@localdomain");
+bsd/nfs/nfs4_subs.c:			slen = snprintf(s, sizeof(s), "nobody@localdomain");
+bsd/nfs/nfs4_subs.c:			slen = snprintf(s, sizeof(s), "%d", vap->va_uid);
+bsd/nfs/nfs4_subs.c:			slen = snprintf(s, sizeof(s), "root@localdomain");
+bsd/nfs/nfs4_subs.c:			slen = snprintf(s, sizeof(s), "nobody@localdomain");
+bsd/nfs/nfs4_subs.c:			slen = snprintf(s, sizeof(s), "%d", vap->va_gid);
+config/System6.0.exports:_snprintf
+config/System6.0.exports:_vsnprintf
+config/Libkern.exports:_snprintf
+config/Libkern.exports:_vsnprintf
+iokit/bsddev/IOKitBSDInit.cpp:        snprintf( buf, len + 1, "{" kIOPathMatchKey "='" kIODeviceTreePlane ":" );
+iokit/bsddev/IOKitBSDInit.cpp:            snprintf( comp, len + 1, "/@%lx,%lx:%ld';}", unit, lun, partition );
+iokit/bsddev/IOKitBSDInit.cpp:            snprintf( comp, len + 1, "/@%lx:%ld';}", unit, partition );
+iokit/Kernel/IOHibernateIO.cpp:	    snprintf(str2, sizeof(str2), "%qx", vars->extentMap[0].start);
+iokit/Kernel/IOHibernateIO.cpp:		snprintf(str2, sizeof(str2), ",%qx", vars->extentMap[0].start);
+iokit/Kernel/IOHibernateIO.cpp:                    len = snprintf(valueString, sizeof(valueString), "0x%lx", *((UInt32 *)data->getBytesNoCopy()));
+iokit/Kernel/IODMAController.cpp:  snprintf(buf, CREATE_BUF_LEN, "IODMAController%08X", (uint32_t)phandle);
+iokit/Kernel/IOLib.cpp:	snprintf(noValue, sizeof(noValue), "0x%x (UNDEFINED)", value);
+iokit/Kernel/IOLib.cpp:    snprintf(buf, sizeof(buf), "pid %d, ", pid);
+iokit/Kernel/IONVRAM.cpp:	snprintf(partitionID, sizeof(partitionID), "0x%02x,",
+iokit/Kernel/IONVRAM.cpp:  buffer += snprintf((char *)buffer, *length, "%s=", propName);
+iokit/Kernel/IONVRAM.cpp:      snprintf((char *)buffer, *length - propNameLength, "%d", (uint32_t)tmpValue);
+iokit/Kernel/IONVRAM.cpp:      snprintf((char *)buffer, *length - propNameLength, "0x%x", (uint32_t)tmpValue);
+iokit/Kernel/IOKitDebug.cpp:	snprintf(format + 1, sizeof(format) - 1, "%ds", 2 * next->getDepth( plane ));
+iokit/Kernel/IOKitDebug.cpp:		snprintf(format + 1, sizeof(format) - 1, "%ds", 2 * next->getDepth( plane ));
+iokit/Kernel/IODeviceTreeSupport.cpp:                snprintf(location, sizeof(location), "%X", *((uint32_t *) prop));
+iokit/Kernel/IODeviceTreeSupport.cpp:        snprintf(buf, sizeof(buf), "IOInterruptController%08X", (uint32_t)phandle);
+libkern/c++/OSNumber.cpp:    snprintf(temp, sizeof(temp), "integer size=\"%d\"", size); 
+libkern/c++/OSNumber.cpp:        snprintf(temp, sizeof(temp), "0x%lx%08lx", (unsigned long)(value >> 32),
+libkern/c++/OSNumber.cpp:        snprintf(temp, sizeof(temp), "0x%lx", (unsigned long)value);
+libkern/c++/OSUnserializeXML.cpp:	snprintf(tempString, 128, "OSUnserializeXML: %s near line %d\n", s, state->lineNumber);
+libkern/c++/OSUnserializeXML.cpp:	snprintf(key, 16, "%u", tag);
+libkern/c++/OSUnserializeXML.cpp:	snprintf(key, 16, "%u", tag);
+libkern/c++/OSUnserialize.cpp:	snprintf(yyerror_message, sizeof(yyerror_message), "OSUnserialize: %s near line %d\n", s, lineNumber);
+libkern/c++/OSUnserialize.cpp:	snprintf(key, sizeof(key), "%u", tag);
+libkern/c++/OSUnserialize.cpp:	snprintf(key, sizeof(key), "%u", tag);
+libkern/c++/OSString.cpp:    me->length = vsnprintf(me->string, 256, format, argList);
+libkern/c++/OSUnserializeXML.y:	snprintf(tempString, 128, "OSUnserializeXML: %s near line %d\n", s, state->lineNumber);
+libkern/c++/OSUnserializeXML.y:	snprintf(key, 16, "%u", tag);
+libkern/c++/OSUnserializeXML.y:	snprintf(key, 16, "%u", tag);
+libkern/c++/OSKext.cpp:    length = vsnprintf(stackBuffer, sizeof(stackBuffer), format, argList);
+libkern/c++/OSKext.cpp:        vsnprintf(allocBuffer, length + 1, format, argList);
+libkern/c++/OSKext.cpp:            snprintf(timestampBuffer, sizeof(timestampBuffer), "%llu",
+libkern/c++/OSUnserialize.y:	snprintf(yyerror_message, sizeof(yyerror_message), "OSUnserialize: %s near line %d\n", s, lineNumber);
+libkern/c++/OSUnserialize.y:	snprintf(key, sizeof(key), "%u", tag);
+libkern/c++/OSUnserialize.y:	snprintf(key, sizeof(key), "%u", tag);
+libkern/c++/OSSerialize.cpp:	snprintf(temp, sizeof(temp), "%u", tag++);
+libkern/gen/OSDebug.cpp:    vsnprintf(buf, sizeof(buf), str, listp);
+libkern/zlib/gzio.c:#ifdef NO_vsnprintf
+libkern/zlib/gzio.c:#  ifdef HAS_vsnprintf_void
+libkern/zlib/gzio.c:    (void)vsnprintf(buf, sizeof(buf), format, va);
+libkern/zlib/gzio.c:    len = vsnprintf(buf, sizeof(buf), format, va);
+libkern/zlib/gzio.c:#ifdef NO_snprintf
+libkern/zlib/gzio.c:#  ifdef HAS_snprintf_void
+libkern/zlib/gzio.c:    snprintf(buf, sizeof(buf), format, a1, a2, a3, a4, a5, a6, a7, a8,
+libkern/zlib/gzio.c:    len = snprintf(buf, sizeof(buf), format, a1, a2, a3, a4, a5, a6, a7, a8,
+libkern/zlib/zutil.c:#  ifdef NO_vsnprintf
+libkern/zlib/zutil.c:#    ifdef HAS_vsnprintf_void
+libkern/zlib/zutil.c:#  ifdef NO_snprintf
+libkern/zlib/zutil.c:#    ifdef HAS_snprintf_void
+libkern/zlib/zutil.h:     /* vsnprintf may exist on some MS-DOS compilers (DJGPP?),
+libkern/zlib/zutil.h:#    define NO_vsnprintf
+libkern/zlib/zutil.h:#    define NO_vsnprintf
+libkern/zlib/zutil.h:     /* In Win32, vsnprintf is available as the "non-ANSI" _vsnprintf. */
+libkern/zlib/zutil.h:#    if !defined(vsnprintf) && !defined(NO_vsnprintf)
+libkern/zlib/zutil.h:#      define vsnprintf _vsnprintf
+libkern/zlib/zutil.h:#    define NO_vsnprintf
+libkern/zlib/zutil.h:#  define NO_vsnprintf
+libkern/kxld/kxld_util.c:        length = snprintf(stack_buffer, sizeof(stack_buffer), "kxld[%s]: %s",
+libkern/kxld/kxld_util.c:            snprintf(alloc_buffer, sizeof(alloc_buffer), "kxld[%s]: %s",
+libkern/OSKextVersion.c:    cpos = snprintf(buffer, bufferLength, "%u", (uint32_t)vers_major);
+libkern/OSKextVersion.c:    cpos += snprintf(buffer+cpos, bufferLength - cpos, "%u", (uint32_t)vers_minor);
+libkern/OSKextVersion.c:        cpos += snprintf(buffer+cpos, bufferLength - cpos, "%u",
+libkern/OSKextVersion.c:        snprintf(buffer+cpos, bufferLength - cpos, "%u", (uint32_t)vers_stage_level);
+libkern/uuid/uuid.c:	snprintf(out,
+libkern/uuid/uuid.c:	snprintf(out,
+libkern/libkern/zconf.h:#  define NO_vsnprintf
+libkern/libkern/zconf.h:#  define NO_vsnprintf
+libkern/libkern/zlib.h:   because the secure snprintf() or vsnprintf() functions were not available.
+osfmk/kern/misc_protos.h:/* sprintf() is being deprecated. Please use snprintf() instead. */ 
+osfmk/kern/misc_protos.h:extern int snprintf(char *, size_t, const char *, ...) __printflike(3,4);
+osfmk/kern/printf.c: *	sprintf() is being deprecated. Please use snprintf() instead.
+osfmk/kern/zalloc.c:	(void) snprintf(_name, sizeof (_name), "zone.%s", (zone)->zone_name); \
+osfmk/kdp/kdp_udp.c:	snprintf (corename, sizeof(corename), "%s-%s-%d.%d.%d.%d-%x", 
+osfmk/i386/mp.c:		snprintf(&pstr[0], sizeof(pstr), "Panic(CPU %d): Unresponsive processor\n", cpu_number());

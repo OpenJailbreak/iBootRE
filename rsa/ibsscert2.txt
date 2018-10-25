@@ -1,0 +1,71 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 164 (0xa4)
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=US, O=Apple Inc., OU=Apple Certification Authority, CN=Apple Secure Boot Certification Authority
+        Validity
+            Not Before: Mar 25 20:52:52 2009 GMT
+            Not After : Mar 26 20:52:52 2019 GMT
+        Subject: C=US, O=Apple Inc., OU=ETS, CN=H2P-Darwin-Prod-DataCenter
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:ad:4d:7e:bd:3b:65:1d:74:dd:09:66:b1:89:18:
+                    97:c7:09:d9:ac:a8:b0:54:02:de:46:67:14:8a:2d:
+                    1f:d3:6d:29:81:fa:ff:c0:6a:b8:0b:ae:91:29:54:
+                    27:90:d9:4b:e2:3a:d8:39:6b:88:4a:03:93:ca:03:
+                    d6:9a:77:5e:d1:25:b4:b2:86:44:6a:23:43:cd:a2:
+                    28:11:1e:f6:33:6d:e8:5b:a5:c2:14:8c:69:11:11:
+                    ff:bc:74:83:fb:a6:4f:a3:8c:63:da:c1:f1:2a:c1:
+                    8d:fa:64:e4:43:38:67:1b:31:07:ff:fd:f7:5b:8f:
+                    41:d3:98:a9:5c:db:61:e6:43
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: 
+                Digital Signature
+            X509v3 Subject Key Identifier: 
+                4D:DC:B8:7B:5E:06:E5:D0:97:79:5A:AD:E4:20:A7:ED:06:82:C3:62
+            X509v3 Authority Key Identifier: 
+                keyid:49:3D:36:53:C9:D7:15:E1:86:61:4E:AC:AB:AB:18:56:63:5D:C3:C6
+
+            1.2.840.113635.100.6.1.1: critical
+                .D3gmI............trecMODS............DORP............PIHC........ ...
+    Signature Algorithm: sha1WithRSAEncryption
+        6a:b4:2c:59:93:f9:7f:9f:d0:c6:c0:2f:c2:f9:fd:1a:bc:3d:
+        d9:a4:68:8e:bf:de:58:cf:27:46:8c:d2:13:d6:66:bf:f5:f2:
+        f9:60:bd:2a:a2:00:99:58:83:c6:fb:a0:aa:fe:d8:e7:12:85:
+        bb:74:07:76:ae:df:57:53:49:32:8c:23:84:2a:60:7c:c8:3b:
+        c7:ec:b2:cb:4a:f0:aa:a4:c1:18:6d:9a:e1:e1:fa:1c:ad:07:
+        e6:f8:98:cf:e2:27:3b:00:08:8e:d6:98:0a:d6:f3:1f:cc:dc:
+        f5:cd:40:5c:12:cb:46:25:b0:e2:ab:8f:7e:bc:a2:e8:5d:68:
+        7e:73:23:37:54:7e:55:25:b7:f0:4b:ea:95:73:4b:49:a3:97:
+        09:fc:1f:7d:a6:80:82:d9:6c:19:40:dc:0e:e4:43:58:4b:f7:
+        4b:00:e7:27:c2:e9:86:85:67:d0:03:8f:6b:29:08:53:64:66:
+        5a:de:86:68:bb:0e:0f:a5:dc:98:32:37:b1:32:4c:7d:9a:bd:
+        5d:ea:0b:ec:ec:c4:5c:95:bf:a3:60:a7:78:56:02:41:ef:bd:
+        30:ac:f7:dd:39:68:4a:36:7f:dc:4d:d8:c3:24:0c:ac:2c:2e:
+        86:7e:74:f0:03:7f:a9:74:e7:1b:f1:be:77:21:e9:7b:e0:39:
+        23:9c:1c:63
+-----BEGIN CERTIFICATE-----
+MIIDdTCCAl2gAwIBAgICAKQwDQYJKoZIhvcNAQEFBQAwfjELMAkGA1UEBhMCVVMx
+EzARBgNVBAoTCkFwcGxlIEluYy4xJjAkBgNVBAsTHUFwcGxlIENlcnRpZmljYXRp
+b24gQXV0aG9yaXR5MTIwMAYDVQQDEylBcHBsZSBTZWN1cmUgQm9vdCBDZXJ0aWZp
+Y2F0aW9uIEF1dGhvcml0eTAeFw0wOTAzMjUyMDUyNTJaFw0xOTAzMjYyMDUyNTJa
+MFUxCzAJBgNVBAYTAlVTMRMwEQYDVQQKEwpBcHBsZSBJbmMuMQwwCgYDVQQLEwNF
+VFMxIzAhBgNVBAMTGkgyUC1EYXJ3aW4tUHJvZC1EYXRhQ2VudGVyMIGfMA0GCSqG
+SIb3DQEBAQUAA4GNADCBiQKBgQCtTX69O2UddN0JZrGJGJfHCdmsqLBUAt5GZxSK
+LR/TbSmB+v/AargLrpEpVCeQ2UviOtg5a4hKA5PKA9aad17RJbSyhkRqI0PNoigR
+HvYzbehbpcIUjGkREf+8dIP7pk+jjGPawfEqwY36ZORDOGcbMQf//fdbj0HTmKlc
+22HmQwIDAQABo4GpMIGmMAsGA1UdDwQEAwIHgDAdBgNVHQ4EFgQUTdy4e14G5dCX
+eVqt5CCn7QaCw2IwHwYDVR0jBBgwFoAUST02U8nXFeGGYU6sq6sYVmNdw8YwVwYK
+KoZIhvdjZAYBAQEB/wRGBEQzZ21J/////+z/////AAAAdHJlY01PRFMQAAAABAAA
+AAEAAABET1JQEAAAAAQAAAABAAAAUElIQxAAAAAEAAAAIIkAADANBgkqhkiG9w0B
+AQUFAAOCAQEAarQsWZP5f5/QxsAvwvn9Grw92aRojr/eWM8nRozSE9Zmv/Xy+WC9
+KqIAmViDxvugqv7Y5xKFu3QHdq7fV1NJMowjhCpgfMg7x+yyy0rwqqTBGG2a4eH6
+HK0H5viYz+InOwAIjtaYCtbzH8zc9c1AXBLLRiWw4quPfryi6F1ofnMjN1R+VSW3
+8EvqlXNLSaOXCfwffaaAgtlsGUDcDuRDWEv3SwDnJ8LphoVn0AOPaykIU2RmWt6G
+aLsOD6XcmDI3sTJMfZq9XeoL7OzEXJW/o2CneFYCQe+9MKz33TloSjZ/3E3YwyQM
+rCwuhn508AN/qXTnG/G+dyHpe+A5I5wcYw==
+-----END CERTIFICATE-----

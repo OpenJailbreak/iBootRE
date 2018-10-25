@@ -1,0 +1,503 @@
+ROM:000041E8                 ; =============== S U B R O U T I N E =======================================
+ROM:000041E8
+ROM:000041E8
+ROM:000041E8                 ; int __cdecl nand_flashcpy(void *buffer, int addr, int size)
+ROM:000041E8                 nand_flashcpy                           ; CODE XREF: nand_boot+94p
+ROM:000041E8                                                         ; nand_boot+1F0p
+ROM:000041E8 000 30 B5                       PUSH    {R4,R5,LR}
+ROM:000041EA 00C 0F 4D                       LDR     R5, =nand_con0
+ROM:000041EC 00C 80 23 9B 04                 MOVLS   R3, 0x2000000
+ROM:000041F0 00C 2C 68                       LDR     R4, [R5]
+ROM:000041F2 00C C9 B2                       UXTB    R1, R1
+ROM:000041F4 00C 23 43                       ORRS    R3, R4
+ROM:000041F6 00C 2B 60                       STR     R3, [R5]        ; start cpy operation
+ROM:000041F8 00C 08 31                       ADDS    R1, #8
+ROM:000041FA 00C 01 23                       MOVS    R3, #1
+ROM:000041FC 00C 8B 40                       LSLS    R3, R1
+ROM:000041FE 00C 0B 49                       LDR     R1, =nand_addr2
+ROM:00004200 00C 0B 4C                       LDR     R4, =nand_fifo_buffer
+ROM:00004202 00C 92 08                       LSRS    R2, R2, #2
+ROM:00004204 00C 0B 60                       STR     R3, [R1]
+ROM:00004206 00C 0B 4B                       LDR     R3, =nand_con1
+ROM:00004208 00C F0 21 49 00                 MOVLS   R1, 0b111100000
+ROM:0000420C 00C 19 60                       STR     R1, [R3]        ; clear otf syndrome reg ptr,
+ROM:0000420C                                                         ; clear otf parity reg ptr,
+ROM:0000420C                                                         ; flush r/w fifo buf
+ROM:0000420E 00C 00 21                       MOVS    R1, #0
+ROM:00004210 00C 02 E0                       B       loc_4218
+ROM:00004212                 ; ---------------------------------------------------------------------------
+ROM:00004212
+ROM:00004212                 loop                                    ; CODE XREF: nand_flashcpy+32j
+ROM:00004212 00C 23 68                       LDR     R3, [R4]
+ROM:00004214 00C 01 31                       ADDS    R1, #1
+ROM:00004216 00C 08 C0                       STMIA   R0!, {R3}
+ROM:00004218
+ROM:00004218                 loc_4218                                ; CODE XREF: nand_flashcpy+28j
+ROM:00004218 00C 91 42                       CMP     R1, R2
+ROM:0000421A 00C FA D3                       BCC     loop
+ROM:0000421C 00C 02 49                       LDR     R1, =nand_con0
+ROM:0000421E 00C 06 4A                       LDR     R2, =0xFDFFFFFF
+ROM:00004220 00C 0B 68                       LDR     R3, [R1]
+ROM:00004222 00C 13 40                       ANDS    R3, R2
+ROM:00004224 00C 0B 60                       STR     R3, [R1]
+ROM:00004226 00C 30 BD                       POP     {R4,R5,PC}
+ROM:00004226                 ; End of function nand_flashcpy
+ROM:00004226
+ROM:00004226                 ; ---------------------------------------------------------------------------
+ROM:00004228 00 00 A0 38     off_4228        DCD nand_con0           ; DATA XREF: nand_flashcpy+2r
+ROM:00004228                                                         ; nand_flashcpy+34r
+ROM:0000422C 14 00 A0 38     off_422C        DCD nand_addr2          ; DATA XREF: nand_flashcpy+16r
+ROM:00004230 80 00 A0 38     off_4230        DCD nand_fifo_buffer    ; DATA XREF: nand_flashcpy+18r
+ROM:00004234 04 00 A0 38     off_4234        DCD nand_con1           ; DATA XREF: nand_flashcpy+1Er
+ROM:00004238 FF FF FF FD     dword_4238      DCD 0xFDFFFFFF          ; DATA XREF: nand_flashcpy+36r
+ROM:0000423C
+ROM:0000423C                 ; =============== S U B R O U T I N E =======================================
+ROM:0000423C
+ROM:0000423C
+ROM:0000423C                 wait_for_ready                          ; CODE XREF: nand_boot+42p
+ROM:0000423C                                                         ; nand_boot+54p
+ROM:0000423C                                                         ; nand_boot+68p
+ROM:0000423C                                                         ; nand_boot+84p
+ROM:0000423C                                                         ; nand_boot+D2p
+ROM:0000423C                                                         ; nand_boot+F0p
+ROM:0000423C                                                         ; nand_boot+100p
+ROM:0000423C                                                         ; nand_boot+110p
+ROM:0000423C                                                         ; nand_boot+122p
+ROM:0000423C                                                         ; nand_boot+136p ...
+ROM:0000423C
+ROM:0000423C                 var_8           = -8
+ROM:0000423C
+ROM:0000423C                 StartTime = R4
+ROM:0000423C                 timeout = R5
+ROM:0000423C 000 F0 B5                       PUSH    {StartTime-R7,LR}
+ROM:0000423E 014 46 46                       MOV     R6, R8
+ROM:00004240 014 40 B4                       PUSH    {R6}
+ROM:00004242 018 04 AF                       ADD     R7, SP, #0x18+var_8
+ROM:00004244 018 06 1C                       ADDS    R6, R0, #0
+ROM:00004246 018 FF F7 91 FB                 BL      Timer_Get_System_Microtime
+ROM:0000424A 018 0C 4A                       LDR     R2, =nand_status
+ROM:0000424C 018 90 46                       MOV     R8, R2
+ROM:0000424E 018 04 1C                       ADDS    StartTime, R0, #0
+ROM:00004250 018 0D 1C                       ADDS    timeout, R1, #0
+ROM:00004252
+ROM:00004252                 loop                                    ; CODE XREF: wait_for_ready+32j
+ROM:00004252 018 42 46                       MOV     R2, R8
+ROM:00004254 018 13 68                       LDR     R3, [R2]
+ROM:00004256 018 33 42                       TST     R3, R6
+ROM:00004258 018 02 D0                       BEQ     loc_4260
+ROM:0000425A 018 00 20                       MOVS    R0, #0
+ROM:0000425C 018 16 60                       STR     R6, [R2]
+ROM:0000425E 018 09 E0                       B       _return
+ROM:00004260                 ; ---------------------------------------------------------------------------
+ROM:00004260
+ROM:00004260                 loc_4260                                ; CODE XREF: wait_for_ready+1Cj
+ROM:00004260 018 20 1C                       ADDS    R0, StartTime, #0
+ROM:00004262 018 29 1C                       ADDS    R1, timeout, #0
+ROM:00004264 018 06 4A                       LDR     R2, =20000
+ROM:00004266 018 00 23                       MOVS    R3, #0
+ROM:00004268 018 FF F7 96 FB                 BL      time_has_elapsed
+ROM:0000426C 018 00 28                       CMP     R0, #0
+ROM:0000426E 018 F0 D0                       BEQ     loop
+ROM:00004270 018 01 20                       MOVS    R0, #1
+ROM:00004272 018 40 42                       NEGS    R0, R0
+ROM:00004274
+ROM:00004274                 _return                                 ; CODE XREF: wait_for_ready+22j
+ROM:00004274 018 04 BC                       POP     {R2}
+ROM:00004276 014 90 46                       MOV     R8, R2
+ROM:00004278 014 F0 BD                       POP     {StartTime-R7,PC}
+ROM:00004278                 ; End of function wait_for_ready
+ROM:00004278
+ROM:00004278                 ; ---------------------------------------------------------------------------
+ROM:0000427A 00                              DCB    0
+ROM:0000427B 00                              DCB    0
+ROM:0000427C 48 00 A0 38     off_427C        DCD nand_status         ; DATA XREF: wait_for_ready+Er
+ROM:00004280 20 4E 00 00     dword_4280      DCD 20000               ; DATA XREF: wait_for_ready+28r
+ROM:00004284
+ROM:00004284                 ; =============== S U B R O U T I N E =======================================
+ROM:00004284
+ROM:00004284
+ROM:00004284                 nand_boot                               ; CODE XREF: Bootrom_Start+164p
+ROM:00004284
+ROM:00004284                 var_3C          = -0x3C
+ROM:00004284                 firmware_file_size= -0x38
+ROM:00004284                 var_34          = -0x34
+ROM:00004284                 var_30          = -0x30
+ROM:00004284                 var_2C          = -0x2C
+ROM:00004284                 loadaddr_buf_ptr= -0x28
+ROM:00004284                 buffer          = -0x24
+ROM:00004284                 var_8           = -8
+ROM:00004284
+ROM:00004284                 file_size = R11
+ROM:00004284 000 F0 B5                       PUSH    {R4-R7,LR}
+ROM:00004286 014 5E 46                       MOV     R6, file_size
+ROM:00004288 014 55 46                       MOV     R5, R10
+ROM:0000428A 014 44 46                       MOV     R4, R8
+ROM:0000428C 014 70 B4                       PUSH    {R4-R6}
+ROM:0000428E 020 06 AF                       ADD     R7, SP, #0x20+var_8
+ROM:00004290 020 87 B0                       SUB     SP, SP, #0x1C
+ROM:00004292 03C C4 B2                       UXTB    R4, R0
+ROM:00004294 03C 05 20                       MOVS    R0, #5
+ROM:00004296 03C 8A 46                       MOV     R10, R1
+ROM:00004298 03C 01 21                       MOVS    R1, #1
+ROM:0000429A 03C 93 46                       MOV     file_size, R2
+ROM:0000429C 03C FF F7 58 FF                 BL      device_power_ctrl ; flash management interface controller = ON
+ROM:000042A0 03C 07 20                       MOVS    R0, #7
+ROM:000042A2 03C 20 40                       ANDS    R0, R4
+ROM:000042A4 03C 01 25                       MOVS    R5, #1
+ROM:000042A6 03C 01 30                       ADDS    R0, #1
+ROM:000042A8 03C 2A 1C                       ADDS    R2, R5, #0
+ROM:000042AA 03C 82 40                       LSLS    R2, R0
+ROM:000042AC 03C 8C 4B                       LDR     R3, =0x77001
+ROM:000042AE 03C 10 1C                       ADDS    R0, R2, #0
+ROM:000042B0 03C 18 43                       ORRS    R0, R3
+ROM:000042B2 03C 8C 4E                       LDR     R6, =nand_con0
+ROM:000042B4 03C 8C 4B                       LDR     R3, =nand_status
+ROM:000042B6 03C 8D 4A                       LDR     R2, =0xFF00FFF
+ROM:000042B8 03C 8D 4C                       LDR     R4, =nand_command
+ROM:000042BA 03C 30 60                       STR     R0, [R6]
+ROM:000042BC 03C 1A 60                       STR     R2, [R3]
+ROM:000042BE 03C FF 23                       MOVS    R3, #0xFF
+ROM:000042C0 03C 23 60                       STR     R3, [R4]        ; send "reset" command
+ROM:000042C2 03C 80 46                       MOV     R8, R0
+ROM:000042C4 03C 02 20                       MOVS    R0, #2
+ROM:000042C6 03C FF F7 B9 FF                 BL      wait_for_ready
+ROM:000042CA 03C 8A 48                       LDR     R0, =0x2710
+ROM:000042CC 03C 00 21                       MOVS    R1, #0
+ROM:000042CE 03C FF F7 79 FA                 BL      event_thingy_maybe
+ROM:000042D2 03C 90 23                       MOVS    R3, #0x90
+ROM:000042D4 03C 23 60                       STR     R3, [R4]        ; send "read id" command
+ROM:000042D6 03C 02 20                       MOVS    R0, #2
+ROM:000042D8 03C FF F7 B0 FF                 BL      wait_for_ready
+ROM:000042DC 03C 86 4B                       LDR     R3, =nand_addr_cnt
+ROM:000042DE 03C 00 22                       MOVS    R2, #0
+ROM:000042E0 03C 04 3C                       SUBS    R4, #4
+ROM:000042E2 03C 1A 60                       STR     R2, [R3]        ; address count = 0
+ROM:000042E4 03C 20 3B                       SUBS    R3, #0x20 ; ' '
+ROM:000042E6 03C 04 20                       MOVS    R0, #4
+ROM:000042E8 03C 1A 60                       STR     R2, [R3]        ; address 0 = 0x0
+ROM:000042EA 03C 25 60                       STR     R5, [R4]        ; transfer address to flash
+ROM:000042EC 03C FF F7 A6 FF                 BL      wait_for_ready
+ROM:000042F0 03C 00 28                       CMP     R0, #0
+ROM:000042F2 03C 00 D0                       BEQ     loc_42F6
+ROM:000042F4 03C EB E0                       B       _fail
+ROM:000042F6                 ; ---------------------------------------------------------------------------
+ROM:000042F6
+ROM:000042F6                 loc_42F6                                ; CODE XREF: nand_boot+6Ej
+ROM:000042F6 03C 81 4B                       LDR     R3, =nand_dat_cnt
+ROM:000042F8 03C 04 22                       MOVS    R2, #4
+ROM:000042FA 03C 08 20                       MOVS    R0, #8
+ROM:000042FC 03C 1A 60                       STR     R2, [R3]        ; 4 bytes
+ROM:000042FE 03C 1C 3B                       SUBS    R3, #0x1C
+ROM:00004300 03C 10 22                       MOVS    R2, #0x10
+ROM:00004302 03C 1A 60                       STR     R2, [R3]        ; nand_addr2 = 0x10
+ROM:00004304 03C E2 23                       MOVS    R3, #0b11100010
+ROM:00004306 03C 23 60                       STR     R3, [R4]        ; read page from nand
+ROM:00004306                                                         ; (clr hamming synd reg ptr, flush r/w fifo buf)
+ROM:00004308 03C FF F7 98 FF                 BL      wait_for_ready
+ROM:0000430C 03C 04 1E                       SUBS    R4, R0, #0
+ROM:0000430E 03C 00 D0                       BEQ     loc_4312
+ROM:00004310 03C DD E0                       B       _fail
+ROM:00004312                 ; ---------------------------------------------------------------------------
+ROM:00004312
+ROM:00004312                 loc_4312                                ; CODE XREF: nand_boot+8Aj
+ROM:00004312 03C 06 A8                       ADD     R0, SP, #0x3C+buffer ; buffer
+ROM:00004314 03C 04 21                       MOVS    R1, #4          ; 0x18
+ROM:00004316 03C 04 22                       MOVS    R2, #4          ; size
+ROM:00004318 03C FF F7 66 FF                 BL      nand_flashcpy
+ROM:0000431C 03C 34 60                       STR     R4, [R6]
+ROM:0000431E 03C 06 9B                       LDR     R3, [SP,#0x3C+buffer]
+ROM:00004320 03C 01 3B                       SUBS    R3, #1
+ROM:00004322 03C 03 33                       ADDS    R3, #3
+ROM:00004324 03C 00 D9                       BLS     loc_4328
+ROM:00004326 03C D2 E0                       B       _fail
+ROM:00004328                 ; ---------------------------------------------------------------------------
+ROM:00004328
+ROM:00004328                 loc_4328                                ; CODE XREF: nand_boot+A0j
+ROM:00004328 03C 5A 46                       MOV     R2, file_size
+ROM:0000432A 03C 02 23                       MOVS    R3, #2
+ROM:0000432C 03C 12 68                       LDR     R2, [R2]
+ROM:0000432E 03C 02 93                       STR     R3, [SP,#0x3C+var_34]
+ROM:00004330 03C 01 92                       STR     R2, [SP,#0x3C+firmware_file_size]
+ROM:00004332 03C B7 E0                       B       loc_44A4
+ROM:00004334                 ; ---------------------------------------------------------------------------
+ROM:00004334
+ROM:00004334                 loc_4334                                ; CODE XREF: nand_boot+228j
+ROM:00004334 03C 72 4B                       LDR     R3, =dword_38A00038
+ROM:00004336 03C 07 22                       MOVS    R2, #7
+ROM:00004338 03C 6D 4D                       LDR     R5, =nand_command
+ROM:0000433A 03C 1A 60                       STR     R2, [R3]
+ROM:0000433C 03C 38 3B                       SUBS    R3, #0x38 ; '8'
+ROM:0000433E 03C 42 46                       MOV     R2, R8
+ROM:00004340 03C 1A 60                       STR     R2, [R3]
+ROM:00004342 03C 69 4A                       LDR     R2, =nand_status
+ROM:00004344 03C 69 4B                       LDR     R3, =0xFF00FFF
+ROM:00004346 03C 01 24                       MOVS    R4, #1
+ROM:00004348 03C 13 60                       STR     R3, [R2]
+ROM:0000434A 03C 6E 4B                       LDR     R3, =unk_38A0081C
+ROM:0000434C 03C 02 20                       MOVS    R0, #2
+ROM:0000434E 03C 6E 4E                       LDR     R6, =nand_con1
+ROM:00004350 03C 1C 60                       STR     R4, [R3]
+ROM:00004352 03C 00 23                       MOVS    R3, #0
+ROM:00004354 03C 2B 60                       STR     R3, [R5]
+ROM:00004356 03C FF F7 71 FF                 BL      wait_for_ready
+ROM:0000435A 03C 67 4B                       LDR     R3, =nand_addr_cnt
+ROM:0000435C 03C 04 22                       MOVS    R2, #4
+ROM:0000435E 03C 04 20                       MOVS    R0, #4
+ROM:00004360 03C 1A 60                       STR     R2, [R3]
+ROM:00004362 03C 02 9A                       LDR     R2, [SP,#0x3C+var_34]
+ROM:00004364 03C 13 04                       LSLS    R3, R2, #0x10
+ROM:00004366 03C 69 4A                       LDR     R2, =nand_addr0
+ROM:00004368 03C 13 60                       STR     R3, [R2]
+ROM:0000436A 03C 02 9A                       LDR     R2, [SP,#0x3C+var_34]
+ROM:0000436C 03C 13 0C                       LSRS    R3, R2, #0x10
+ROM:0000436E 03C 68 4A                       LDR     R2, =nand_addr1
+ROM:00004370 03C 13 60                       STR     R3, [R2]
+ROM:00004372 03C 34 60                       STR     R4, [R6]        ; transfer address to flash
+ROM:00004374 03C FF F7 62 FF                 BL      wait_for_ready
+ROM:00004378 03C 00 28                       CMP     R0, #0
+ROM:0000437A 03C 00 D0                       BEQ     loc_437E
+ROM:0000437C 03C 97 E0                       B       _deinit_nand
+ROM:0000437E                 ; ---------------------------------------------------------------------------
+ROM:0000437E
+ROM:0000437E                 loc_437E                                ; CODE XREF: nand_boot+F6j
+ROM:0000437E 03C 30 23                       MOVS    R3, #0x30 ; '0'
+ROM:00004380 03C 2B 60                       STR     R3, [R5]        ; send "read page" command
+ROM:00004382 03C 02 20                       MOVS    R0, #2
+ROM:00004384 03C FF F7 5A FF                 BL      wait_for_ready
+ROM:00004388 03C 00 28                       CMP     R0, #0
+ROM:0000438A 03C 00 D0                       BEQ     loc_438E
+ROM:0000438C 03C 8F E0                       B       _deinit_nand
+ROM:0000438E                 ; ---------------------------------------------------------------------------
+ROM:0000438E
+ROM:0000438E                 loc_438E                                ; CODE XREF: nand_boot+106j
+ROM:0000438E 03C 70 23                       MOVS    R3, #0x70 ; 'p'
+ROM:00004390 03C 2B 60                       STR     R3, [R5]
+ROM:00004392 03C 02 20                       MOVS    R0, #2
+ROM:00004394 03C FF F7 52 FF                 BL      wait_for_ready
+ROM:00004398 03C 5E 4B                       LDR     R3, =nand_addr2
+ROM:0000439A 03C 1C 60                       STR     R4, [R3]
+ROM:0000439C 03C 80 24                       MOVS    R4, #0x80
+ROM:0000439E 03C EA 23                       MOVS    R3, #0xEA
+ROM:000043A0 03C 24 04                       LSLS    R4, R4, #0x10
+ROM:000043A2 03C 33 60                       STR     R3, [R6]        ; Read data from page
+ROM:000043A2                                                         ; Clear on-the-fly Syndrome Register Pointer,
+ROM:000043A2                                                         ; Write FIFO, and Read FIFO
+ROM:000043A4 03C 20 1C                       ADDS    R0, R4, #0
+ROM:000043A6 03C FF F7 49 FF                 BL      wait_for_ready
+ROM:000043AA 03C 4F 4A                       LDR     R2, =nand_status
+ROM:000043AC 03C 20 23                       MOVS    R3, #0x20 ; ' '
+ROM:000043AE 03C 33 60                       STR     R3, [R6]        ; Flush Write FIFO
+ROM:000043B0 03C 14 60                       STR     R4, [R2]
+ROM:000043B2 03C 00 28                       CMP     R0, #0
+ROM:000043B4 03C 7B D1                       BNE     _deinit_nand
+ROM:000043B6 03C 28 60                       STR     R0, [R5]
+ROM:000043B8 03C 02 20                       MOVS    R0, #2
+ROM:000043BA 03C FF F7 3F FF                 BL      wait_for_ready
+ROM:000043BE 03C 53 46                       MOV     R3, R10
+ROM:000043C0 03C 05 93                       STR     R3, [SP,#0x3C+loadaddr_buf_ptr]
+ROM:000043C2 03C 80 23                       MOVS    R3, #0x80 ; 'Ç'
+ROM:000043C4 03C 00 22                       MOVS    R2, #0
+ROM:000043C6 03C 1B 05                       LSLS    R3, R3, #0x14
+ROM:000043C8 03C 03 92                       STR     R2, [SP,#0x3C+var_30]
+ROM:000043CA 03C 00 93                       STR     R3, [SP,#0x3C+var_3C]
+ROM:000043CC
+ROM:000043CC                 loc_43CC                                ; CODE XREF: nand_boot+206j
+ROM:000043CC 03C 46 4B                       LDR     R3, =nand_status
+ROM:000043CE 03C 00 9A                       LDR     R2, [SP,#0x3C+var_3C]
+ROM:000043D0 03C 08 20                       MOVS    R0, #8
+ROM:000043D2 03C 1A 60                       STR     R2, [R3]
+ROM:000043D4 03C 49 4A                       LDR     R2, =nand_dat_cnt
+ROM:000043D6 03C 19 23                       MOVS    R3, #0x19
+ROM:000043D8 03C 13 60                       STR     R3, [R2]
+ROM:000043DA 03C 1C 3A                       SUBS    R2, #0x1C
+ROM:000043DC 03C 10 23                       MOVS    R3, #0x10
+ROM:000043DE 03C 13 60                       STR     R3, [R2]
+ROM:000043E0 03C 4D 4B                       LDR     R3, =0x100F2
+ROM:000043E2 03C 10 3A                       SUBS    R2, #0x10
+ROM:000043E4 03C 13 60                       STR     R3, [R2]        ; read data from page
+ROM:000043E6 03C FF F7 29 FF                 BL      wait_for_ready
+ROM:000043EA 03C 00 28                       CMP     R0, #0
+ROM:000043EC 03C 5F D1                       BNE     _deinit_nand
+ROM:000043EE 03C 43 4B                       LDR     R3, =nand_dat_cnt
+ROM:000043F0 03C 4A 4D                       LDR     R5, =0x1FF
+ROM:000043F2 03C 48 4A                       LDR     R2, =nand_addr2
+ROM:000043F4 03C 1D 60                       STR     R5, [R3]
+ROM:000043F6 03C 18 3B                       SUBS    R3, #0x18
+ROM:000043F8 03C 01 24                       MOVS    R4, #1
+ROM:000043FA 03C 1C 60                       STR     R4, [R3]
+ROM:000043FC 03C 14 60                       STR     R4, [R2]
+ROM:000043FE 03C 10 3A                       SUBS    R2, #0x10
+ROM:00004400 03C E2 23                       MOVS    R3, #0xE2 ; 'G'
+ROM:00004402 03C 13 60                       STR     R3, [R2]
+ROM:00004404 03C 08 20                       MOVS    R0, #8
+ROM:00004406 03C FF F7 19 FF                 BL      wait_for_ready
+ROM:0000440A 03C 00 28                       CMP     R0, #0
+ROM:0000440C 03C 4F D1                       BNE     _deinit_nand
+ROM:0000440E 03C 36 4A                       LDR     R2, =nand_status
+ROM:00004410 03C 13 68                       LDR     R3, [R2]
+ROM:00004412 03C 00 9A                       LDR     R2, [SP,#0x3C+var_3C]
+ROM:00004414 03C 13 42                       TST     R3, R2
+ROM:00004416 03C 4A D0                       BEQ     _deinit_nand
+ROM:00004418 03C 3A 4B                       LDR     R3, =unk_38A0081C
+ROM:0000441A 03C 41 4A                       LDR     R2, =0x1000400
+ROM:0000441C 03C 01 26                       MOVS    R6, #1
+ROM:0000441E 03C 1C 60                       STR     R4, [R3]
+ROM:00004420 03C 04 3B                       SUBS    R3, #4
+ROM:00004422 03C 1A 60                       STR     R2, [R3]
+ROM:00004424 03C 08 3B                       SUBS    R3, #8
+ROM:00004426 03C 05 22                       MOVS    R2, #5
+ROM:00004428 03C 1D 60                       STR     R5, [R3]
+ROM:0000442A 03C 3E 4B                       LDR     R3, =nand_addr4
+ROM:0000442C 03C 18 60                       STR     R0, [R3]
+ROM:0000442E 03C 3E 4B                       LDR     R3, =unk_38A00804
+ROM:00004430 03C 1A 60                       STR     R2, [R3]
+ROM:00004432 03C 3E 4A                       LDR     R2, =unk_38A00810
+ROM:00004434 03C 12 68                       LDR     R2, [R2]
+ROM:00004436 03C 04 92                       STR     R2, [SP,#0x3C+var_2C]
+ROM:00004438 03C FF F7 98 FA                 BL      Timer_Get_System_Microtime
+ROM:0000443C 03C 04 1C                       ADDS    R4, R0, #0
+ROM:0000443E 03C 0D 1C                       ADDS    R5, R1, #0
+ROM:00004440 03C 0A E0                       B       loc_4458
+ROM:00004442                 ; ---------------------------------------------------------------------------
+ROM:00004442
+ROM:00004442                 loc_4442                                ; CODE XREF: nand_boot+1D8j
+ROM:00004442 03C 3A 4B                       LDR     R3, =unk_38A00810
+ROM:00004444 03C 20 1C                       ADDS    R0, R4, #0
+ROM:00004446 03C 29 1C                       ADDS    R1, R5, #0
+ROM:00004448 03C 1B 68                       LDR     R3, [R3]
+ROM:0000444A 03C 39 4A                       LDR     R2, =20000
+ROM:0000444C 03C 04 93                       STR     R3, [SP,#0x3C+var_2C]
+ROM:0000444E 03C 00 23                       MOVS    R3, #0
+ROM:00004450 03C FF F7 A2 FA                 BL      time_has_elapsed
+ROM:00004454 03C 00 28                       CMP     R0, #0
+ROM:00004456 03C 2A D1                       BNE     _deinit_nand
+ROM:00004458
+ROM:00004458                 loc_4458                                ; CODE XREF: nand_boot+1BCj
+ROM:00004458 03C 04 9A                       LDR     R2, [SP,#0x3C+var_2C]
+ROM:0000445A 03C 32 42                       TST     R2, R6
+ROM:0000445C 03C F1 D0                       BEQ     loc_4442
+ROM:0000445E 03C 35 4B                       LDR     R3, =unk_38A0080C
+ROM:00004460 03C 32 4A                       LDR     R2, =unk_38A00810
+ROM:00004462 03C 1B 68                       LDR     R3, [R3]
+ROM:00004464 03C 16 60                       STR     R6, [R2]
+ROM:00004466 03C 1C 1C                       ADDS    R4, R3, #0
+ROM:00004468 03C 34 40                       ANDS    R4, R6
+ROM:0000446A 03C 20 D1                       BNE     _deinit_nand
+ROM:0000446C 03C 80 22 92 00                 MOVLS   R2, 0x200       ; size
+ROM:00004470 03C 05 98                       LDR     R0, [SP,#0x3C+loadaddr_buf_ptr] ; buffer
+ROM:00004472 03C 00 21                       MOVS    R1, #0          ; addr
+ROM:00004474 03C FF F7 B8 FE                 BL      nand_flashcpy
+ROM:00004478 03C 05 9B                       LDR     R3, [SP,#0x3C+loadaddr_buf_ptr]
+ROM:0000447A 03C 80 22 92 00                 MOVLS   R2, 0x200
+ROM:0000447E 03C 9B 18                       ADDS    R3, R3, R2
+ROM:00004480 03C 05 93                       STR     R3, [SP,#0x3C+loadaddr_buf_ptr]
+ROM:00004482 03C 03 9B                       LDR     R3, [SP,#0x3C+var_30]
+ROM:00004484 03C 01 33                       ADDS    R3, #1
+ROM:00004486 03C 03 93                       STR     R3, [SP,#0x3C+var_30]
+ROM:00004488 03C 03 2B                       CMP     R3, #3
+ROM:0000448A 03C 9F D1                       BNE     loc_43CC
+ROM:0000448C 03C 15 4B                       LDR     R3, =nand_con0
+ROM:0000448E 03C 1C 60                       STR     R4, [R3]
+ROM:00004490 03C 02 9A                       LDR     R2, [SP,#0x3C+var_34]
+ROM:00004492 03C C0 23                       MOVS    R3, #0xC0 ; '+'
+ROM:00004494 03C 01 32                       ADDS    R2, #1
+ROM:00004496 03C DB 00                       LSLS    R3, R3, #3
+ROM:00004498 03C 02 92                       STR     R2, [SP,#0x3C+var_34]
+ROM:0000449A 03C 9A 44                       ADD     R10, R3
+ROM:0000449C 03C 01 9A                       LDR     R2, [SP,#0x3C+firmware_file_size]
+ROM:0000449E 03C 26 4B                       LDR     R3, =0xFFFFFA00
+ROM:000044A0 03C D2 18                       ADDS    R2, R2, R3
+ROM:000044A2 03C 01 92                       STR     R2, [SP,#0x3C+firmware_file_size]
+ROM:000044A4
+ROM:000044A4                 loc_44A4                                ; CODE XREF: nand_boot+AEj
+ROM:000044A4 03C 25 4B                       LDR     R3, =0x5FF
+ROM:000044A6 03C 01 9A                       LDR     R2, [SP,#0x3C+firmware_file_size]
+ROM:000044A8 03C 9A 42                       CMP     R2, R3
+ROM:000044AA 03C 00 D9                       BLS     _deinit_nand
+ROM:000044AC 03C 42 E7                       B       loc_4334
+ROM:000044AE                 ; ---------------------------------------------------------------------------
+ROM:000044AE
+ROM:000044AE                 _deinit_nand                            ; CODE XREF: nand_boot+F8j
+ROM:000044AE                                                         ; nand_boot+108j
+ROM:000044AE                                                         ; nand_boot+130j
+ROM:000044AE                                                         ; nand_boot+168j
+ROM:000044AE                                                         ; nand_boot+188j
+ROM:000044AE                                                         ; nand_boot+192j
+ROM:000044AE                                                         ; nand_boot+1D2j
+ROM:000044AE                                                         ; nand_boot+1E6j
+ROM:000044AE                                                         ; nand_boot+226j
+ROM:000044AE 03C 05 20                       MOVS    R0, #5
+ROM:000044B0 03C 00 21                       MOVS    R1, #0
+ROM:000044B2 03C FF F7 4D FE                 BL      device_power_ctrl ; flash management interface controller = OFF
+ROM:000044B6 03C 02 9A                       LDR     R2, [SP,#0x3C+var_34]
+ROM:000044B8 03C 53 00                       LSLS    R3, R2, #1
+ROM:000044BA 03C 9B 18                       ADDS    R3, R3, R2
+ROM:000044BC 03C 20 4A                       LDR     R2, =0xFFFFF400
+ROM:000044BE 03C 5B 02                       LSLS    R3, R3, #9
+ROM:000044C0 03C 9B 18                       ADDS    R3, R3, R2
+ROM:000044C2 03C 5A 46                       MOV     R2, file_size
+ROM:000044C4 03C 13 60                       STR     R3, [R2]
+ROM:000044C6 03C 00 2B                       CMP     R3, #0
+ROM:000044C8 03C 01 D0                       BEQ     _fail
+ROM:000044CA 03C 00 20                       MOVS    R0, #0
+ROM:000044CC 03C 01 E0                       B       return
+ROM:000044CE                 ; ---------------------------------------------------------------------------
+ROM:000044CE
+ROM:000044CE                 _fail                                   ; CODE XREF: nand_boot+70j
+ROM:000044CE                                                         ; nand_boot+8Cj
+ROM:000044CE                                                         ; nand_boot+A2j
+ROM:000044CE                                                         ; nand_boot+244j
+ROM:000044CE 03C 01 20                       MOVS    R0, #1
+ROM:000044D0 03C 40 42                       NEGS    R0, R0
+ROM:000044D2
+ROM:000044D2                 return                                  ; CODE XREF: nand_boot+248j
+ROM:000044D2 03C 07 B0                       ADD     SP, SP, #0x1C
+ROM:000044D4 020 1C BC                       POP     {R2-R4}
+ROM:000044D6 014 90 46                       MOV     R8, R2
+ROM:000044D8 014 9A 46                       MOV     R10, R3
+ROM:000044DA 014 A3 46                       MOV     file_size, R4
+ROM:000044DC 014 F0 BD                       POP     {R4-R7,PC}
+ROM:000044DC                 ; End of function nand_boot
+ROM:000044DC
+ROM:000044DC                 ; ---------------------------------------------------------------------------
+ROM:000044DE 00                              DCB    0
+ROM:000044DF 00                              DCB    0
+ROM:000044E0 01 70 07 00     dword_44E0      DCD 0x77001             ; DATA XREF: nand_boot+28r
+ROM:000044E4 00 00 A0 38     off_44E4        DCD nand_con0           ; DATA XREF: nand_boot+2Er
+ROM:000044E4                                                         ; nand_boot+208r
+ROM:000044E8 48 00 A0 38     off_44E8        DCD nand_status         ; DATA XREF: nand_boot+30r
+ROM:000044E8                                                         ; nand_boot+BEr
+ROM:000044E8                                                         ; nand_boot+126r
+ROM:000044E8                                                         ; nand_boot:loc_43CCr
+ROM:000044E8                                                         ; nand_boot+18Ar
+ROM:000044EC FF 0F F0 0F     dword_44EC      DCD 0xFF00FFF           ; DATA XREF: nand_boot+32r
+ROM:000044EC                                                         ; nand_boot+C0r
+ROM:000044F0 08 00 A0 38     off_44F0        DCD nand_command        ; DATA XREF: nand_boot+34r
+ROM:000044F0                                                         ; nand_boot+B4r
+ROM:000044F4 10 27 00 00     dword_44F4      DCD 0x2710              ; DATA XREF: nand_boot+46r
+ROM:000044F8 2C 00 A0 38     off_44F8        DCD nand_addr_cnt       ; DATA XREF: nand_boot+58r
+ROM:000044F8                                                         ; nand_boot+D6r
+ROM:000044FC 30 00 A0 38     off_44FC        DCD nand_dat_cnt        ; DATA XREF: nand_boot:loc_42F6r
+ROM:000044FC                                                         ; nand_boot+150r
+ROM:000044FC                                                         ; nand_boot+16Ar
+ROM:00004500 38 00 A0 38     off_4500        DCD dword_38A00038      ; DATA XREF: nand_boot:loc_4334r
+ROM:00004504 1C 08 A0 38     off_4504        DCD unk_38A0081C        ; DATA XREF: nand_boot+C6r
+ROM:00004504                                                         ; nand_boot+194r
+ROM:00004508 04 00 A0 38     off_4508        DCD nand_con1           ; DATA XREF: nand_boot+CAr
+ROM:0000450C 0C 00 A0 38     off_450C        DCD nand_addr0          ; DATA XREF: nand_boot+E2r
+ROM:00004510 10 00 A0 38     off_4510        DCD nand_addr1          ; DATA XREF: nand_boot+EAr
+ROM:00004514 14 00 A0 38     off_4514        DCD nand_addr2          ; DATA XREF: nand_boot+114r
+ROM:00004514                                                         ; nand_boot+16Er
+ROM:00004518 F2 00 01 00     dword_4518      DCD 0x100F2             ; DATA XREF: nand_boot+15Cr
+ROM:0000451C FF 01 00 00     dword_451C      DCD 0x1FF               ; DATA XREF: nand_boot+16Cr
+ROM:00004520 00 04 00 01     dword_4520      DCD 0x1000400           ; DATA XREF: nand_boot+196r
+ROM:00004524 1C 00 A0 38     off_4524        DCD nand_addr4          ; DATA XREF: nand_boot+1A6r
+ROM:00004528 04 08 A0 38     off_4528        DCD unk_38A00804        ; DATA XREF: nand_boot+1AAr
+ROM:0000452C 10 08 A0 38     off_452C        DCD unk_38A00810        ; DATA XREF: nand_boot+1AEr
+ROM:0000452C                                                         ; nand_boot:loc_4442r
+ROM:0000452C                                                         ; nand_boot+1DCr
+ROM:00004530 20 4E 00 00     dword_4530      DCD 20000               ; DATA XREF: nand_boot+1C6r
+ROM:00004534 0C 08 A0 38     off_4534        DCD unk_38A0080C        ; DATA XREF: nand_boot+1DAr
+ROM:00004538 00 FA FF FF     dword_4538      DCD 0xFFFFFA00          ; DATA XREF: nand_boot+21Ar
+ROM:0000453C FF 05 00 00     dword_453C      DCD 0x5FF               ; DATA XREF: nand_boot:loc_44A4r
+ROM:00004540 00 F4 FF FF     dword_4540      DCD 0xFFFFF400          ; DATA XREF: nand_boot+238r

@@ -1,0 +1,38 @@
+gFILCallbacks = 0x4FF29BA8
+struct {
+    0x4: h2fmiReadSinglePage()
+    0x8: h2fmiReadRawPage()
+    0xC: h2fmiReadSequentialPages()
+    0x10: h2fmiReadScatteredPages()
+    0x18: h2fmiReadBootpage()
+    0x1C: h2fmiWriteBootpage()
+    0x20: h2fmiErasePage()
+    0x44: h2fmiGetDeviceInfo(int infoType)
+}
+
+gFTLCallbacks = 0x4FF2A3A0
+struct {
+    0x0: FTL_Init()
+    0x4: FTL_Open()
+    0x8: FTL_Read()
+}
+
+gVFLCallbacks = 0x4FF2A378
+struct {
+    0x0: VFL_Init()
+    0x4: VFL_Open()
+    0x8: VFL_Read()
+}
+
+sizeof(BUF_Data) = 0xC
+struct BUF_Data {
+    0x0: BUFCxt->pBufferList
+    0x4: pBufIdx->pData
+    0x8: 0x10000000
+    0xC: pBufIdx->pSpare
+}
+
+, 
+
+
+WMR->FIL->VFL->FTL

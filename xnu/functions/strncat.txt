@@ -1,0 +1,11 @@
+bsd/vfs/kpi_vfs.c:		strncat(xfromname, fcnp->cn_nameptr, fcnp->cn_namelen);
+bsd/vfs/kpi_vfs.c:		strncat(xtoname, tcnp->cn_nameptr, tcnp->cn_namelen);
+bsd/man/man2/sigaction.2:.Fn strncat ,
+config/System6.0.exports:_strncat
+config/Libkern.exports:_strncat
+iokit/Kernel/IOStringFuncs.c:char *strncat(char *s1, const char *s2, unsigned long n);
+iokit/Kernel/IOStringFuncs.c:strncat(char *s1, const char *s2, unsigned long n)
+osfmk/device/subrs.c: * Appends src to string dst of size siz (unlike strncat, siz is the
+osfmk/libsa/string.h:extern char	*strncat(char *, const char *, size_t);
+security/mac_audit.c:	strncat(sanitized, ": ", MAC_AUDIT_DATA_LIMIT - plen + 2);
+security/mac_audit.c:	strncat(sanitized, text, MAC_AUDIT_DATA_LIMIT - plen);

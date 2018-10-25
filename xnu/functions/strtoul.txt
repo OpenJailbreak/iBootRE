@@ -1,0 +1,24 @@
+bsd/netinet/in.c:	u_int32_t l = strtoul(p, 0, 0);
+bsd/kern/netboot.c:	u_long l = strtoul(p, 0, 0);
+bsd/vfs/vfs_lookup.c:	id = strtoul(path, &str, 10);
+bsd/libkern/strtol.c: * strol.c - The functions strtol() & strtoul() are exported as public API
+bsd/libkern/strtol.c: *      Created based on BSD4.4's strtol.c & strtoul.c.
+bsd/libkern/strtol.c:strtoul(nptr, endptr, base)
+bsd/libkern/libkern.h:extern u_long	strtoul(const char *, char **, int);
+bsd/hfs/hfs_link.c:	*firstlink = strtoul((char*)&dataptr->attrData[0], NULL, 10);
+bsd/hfs/hfs_vfsops.c:			linkref = strtoul(&nameptr[HFS_INODE_PREFIX_LEN], NULL, 10);
+bsd/hfs/hfs_vfsops.c:			linkref = strtoul(&nameptr[HFS_DIRINODE_PREFIX_LEN], NULL, 10);
+bsd/hfs/hfs_readwrite.c:		cnid = strtoul(bufptr, NULL, 10);
+config/System6.0.exports:_strtoul
+config/Libkern.exports:_strtoul
+iokit/Kernel/IOStringFuncs.c: * strol.c - The functions strtol() & strtoul() are exported as public API
+iokit/Kernel/IOStringFuncs.c: *      Created based on BSD4.4's strtol.c & strtoul.c.
+iokit/Kernel/IOStringFuncs.c:unsigned long strtoul(const char *nptr, char **endptr, int base);
+iokit/Kernel/IOStringFuncs.c:strtoul(const char *nptr, char **endptr, int base)
+libkern/c++/OSNumber.cpp:    return init((unsigned long long)strtoul(newValue, NULL, 0), newNumberOfBits);
+libkern/c++/OSUnserializeXML.cpp:					object->size = strtoul(values[i], NULL, 0);
+libkern/c++/OSUnserializeXML.y:					object->size = strtoul(values[i], NULL, 0);
+osfmk/console/panic_ui/setupdialog.c:            width = strtoul(argv[++next], &ptr, 0);
+osfmk/console/panic_ui/setupdialog.c:            width = strtoul(argv[++next], &ptr, 0);
+osfmk/libsa/stdlib.h: * 	Added strtol and strtoul prototypes.
+osfmk/libsa/stdlib.h:extern unsigned long int strtoul (const char *, char **, int);

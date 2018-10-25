@@ -1,0 +1,21 @@
+struct TempImage {
+    void* imageData;
+    uint32_t flag;
+    uint32_t imageSize;
+    uint32_t unk0x10;
+    uint32_t unk0x14;
+    uint32_t unk0x18;
+};
+
+image_parse_header(ImageDescriptor** image, void* data, uint32_t size, uint32_t type)
+
+image_parse_footer(ImageInfo* info, int unknown)
+
+#define kShshOffsetNull = 0x20000
+#define kSecondHeader = 0x40000
+#define kHeaderValid = 0x1
+
+enum {
+    kMainHeader = 0,
+    kSecondHeader = 1
+}; HeaderType

@@ -1,0 +1,90 @@
+*hfs_attrlist.c:	MALLOC(attrbufptr, void *, maxattrblocksize, M_TEMP, M_WAITOK);
+*hfs_attrlist.c:	MALLOC(ce_list, struct cat_entrylist *, CE_LIST_SIZE(maxentries), M_TEMP, M_WAITOK);
+
+hfs_btreeio.c:	MALLOC(btcb, BTreeControlBlock *, sizeof(BTreeControlBlock), M_TEMP, M_WAITOK);
+
+hfs_catalog.c:	MALLOC(pluskey, HFSPlusCatalogKey *, sizeof(HFSPlusCatalogKey), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(keyp, CatalogKey *, sizeof(CatalogKey), M_TEMP, M_WAITOK);
+*hfs_catalog.c:	MALLOC(iterator, BTreeIterator *, 2 * sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(recp, CatalogRecord *, sizeof(CatalogRecord), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(pluskey, HFSPlusCatalogKey *, sizeof(HFSPlusCatalogKey), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(recp, CatalogRecord *, sizeof(CatalogRecord), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(recp, CatalogRecord *, sizeof(CatalogRecord), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(pluskey, HFSPlusCatalogKey *, sizeof(HFSPlusCatalogKey), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(bto, struct btobj *, sizeof(struct btobj), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(pluskey, HFSPlusCatalogKey *, sizeof(HFSPlusCatalogKey), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(from_iterator, BTreeIterator *, sizeof(*from_iterator), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(to_iterator, BTreeIterator *, sizeof(*to_iterator), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(recp, CatalogRecord *, sizeof(CatalogRecord), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(pluskey, HFSPlusCatalogKey *, sizeof(HFSPlusCatalogKey), M_TEMP, M_WAITOK);
++hfs_catalog.c:	MALLOC(ip, BTreeIterator *, sizeof(*ip), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(bto, struct btobj *, sizeof(struct btobj), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(pluskey, HFSPlusCatalogKey *, sizeof(HFSPlusCatalogKey), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+*hfs_catalog.c:	MALLOC(new_nameptr, u_int8_t *, bufsize, M_TEMP, M_WAITOK);
+*hfs_catalog.c:	MALLOC(buffer, void *, bufsize, M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_catalog.c:	MALLOC(recp, CatalogRecord *, sizeof(CatalogRecord), M_TEMP, M_WAITOK);
+*hfs_catalog.c:	MALLOC(nameptr, unsigned char *, bufsize, M_TEMP, M_WAITOK);
+*hfs_catalog.c:	MALLOC(nameptr, unsigned char *, bufsize, M_TEMP, M_WAITOK);
+
+hfs_chash.c:	MALLOC_ZONE(ncp, struct cnode *, sizeof(struct cnode), M_HFSNODE, M_WAITOK);
+
+hfs_cnode.c:	MALLOC_ZONE(fp, struct filefork *, sizeof(struct filefork),
+
+hfs_encodings.c:MALLOC(encp, struct hfs_encoding *, sizeof(struct hfs_encoding), M_TEMP, M_WAITOK);
+
+*hfs_hotfiles.c:	MALLOC(hotdata, hotfile_data_t *, size, M_TEMP, M_WAITOK);
+*hfs_hotfiles.c:	MALLOC(listp, hotfilelist_t *, size, M_TEMP, M_WAITOK);
+hfs_hotfiles.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_hotfiles.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_hotfiles.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_hotfiles.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+*hfs_hotfiles.c:	MALLOC(iterator, BTreeIterator *, 2 * sizeof(*iterator), M_TEMP, M_WAITOK);
+
+hfs_link.c:		MALLOC(origin, linkorigin_t *, sizeof(linkorigin_t), M_TEMP, M_WAITOK);
+hfs_link.c:	    MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_link.c:	    MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+
+*hfs_search.c:	MALLOC( attributesBuffer, void *, eachReturnBufferSize, M_TEMP, M_WAITOK );
+
+*hfs_vfsops.c:	MALLOC(mdbp, HFSMasterDirectoryBlock *, kMDBSize, M_TEMP, M_WAITOK);
+hfs_vfsops.c:	MALLOC(hfsmp, struct hfsmount *, sizeof(struct hfsmount), M_HFSMNT, M_WAITOK);
+*hfs_vfsops.c:	MALLOC(filename, char *, newlen, M_TEMP, M_WAITOK);
+*hfs_vfsops.c:	MALLOC(unicode_name, u_int16_t *, bufsize, M_TEMP, M_WAITOK);
+*hfs_vfsops.c:	MALLOC_ZONE(cn.cn_pnbuf, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+hfs_vfsops.c:	MALLOC(mp, struct mount *, sizeof(struct mount), M_TEMP, M_WAITOK);
+hfs_vfsops.c:	MALLOC(args, struct hfs_mount_args *, sizeof(struct hfs_mount_args), M_TEMP, M_WAITOK);
+
+hfs_vfsutils.c:	MALLOC(iterator, struct BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_vfsutils.c:	MALLOC_ZONE(hint, directoryhint_t *, sizeof(directoryhint_t), M_HFSDIRHINT, M_WAITOK);
+*hfs_vfsutils.c:	MALLOC(ustr1, u_int16_t *, maxbytes << 1, M_TEMP, M_WAITOK);
+
+hfs_vnops.c:	MALLOC_ZONE(dp, decmpfs_cnode *, sizeof(decmpfs_cnode), M_DECMPFS_CNODE, M_WAITOK);
+*hfs_vnops.c:	MALLOC(fp->ff_symlinkptr, char *, fp->ff_size, M_TEMP, M_WAITOK);
+*hfs_vnops.c:	MALLOC_ZONE(cn.cn_pnbuf, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+
+hfs_xattr.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+*hfs_xattr.c:	MALLOC(recp, HFSPlusAttrRecord *, bufsize, M_TEMP, M_WAITOK);
+*hfs_xattr.c:	MALLOC(extentbuf, HFSPlusExtentDescriptor *, extentbufsize, M_TEMP, M_WAITOK);
+*hfs_xattr.c:	MALLOC(user_data_ptr, void *, attrsize, M_TEMP, M_WAITOK);
+hfs_xattr.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+*hfs_xattr.c:	MALLOC(extentptr, HFSPlusExtentDescriptor *, extentbufsize, M_TEMP, M_WAITOK);
+hfs_xattr.c:	MALLOC(recp, HFSPlusAttrRecord *, sizeof(HFSPlusAttrRecord), M_TEMP, M_WAITOK);
+*hfs_xattr.c:	MALLOC(recp, HFSPlusAttrRecord *, btdata.itemSize, M_TEMP, M_WAITOK);
+hfs_xattr.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_xattr.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_xattr.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
++hfs_xattr.c:	MALLOC(iterator, BTreeIterator *, sizeof(BTreeIterator), M_TEMP, M_WAITOK);
+hfs_xattr.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+hfs_xattr.c:	MALLOC(iterator, BTreeIterator *, sizeof(*iterator), M_TEMP, M_WAITOK);
+
+*MacOSStubs.c:   MALLOC (tmptr, Ptr, byteCount, M_TEMP, M_WAITOK);
+*MacOSStubs.c:   MALLOC (tmptr, Ptr, byteCount, M_TEMP, M_WAITOK);
+
+rangelist.c:	MALLOC(range, struct rl_entry *, sizeof(*range), M_TEMP, M_WAITOK);
+rangelist.c:	MALLOC(splitrange, struct rl_entry *, sizeof *splitrange, M_TEMP, M_WAITOK);

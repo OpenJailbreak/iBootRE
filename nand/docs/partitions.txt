@@ -1,0 +1,102 @@
+0x4ff32b00: 74 6f 6f 62 (boot)
+            00 00 00 00 (0x0) - startBlock
+            01 00 00 00 (0x1) - numOfBlocks
+            00 00 00 00 
+0x4ff32b10: 67 6f 6c 70 (plog)
+            01 00 00 00 (0x1) - startBlock
+            01 00 00 00 (0x1) - numOfBlocks
+            00 00 00 00 
+0x4ff32b20: 6d 72 76 6e (nvrm)
+            02 00 00 00 (0x2) - startBlock
+            06 00 00 00 (0x6) - numOfBlocks
+            00 00 00 00 
+0x4ff32b30: 6d 72 69 66 (firm)
+            08 00 00 00 (0x8) - startBlock
+            08 00 00 00 (0x8) - numOfBlocks
+            00 00 00 00 
+0x4ff32b40: 73 79 73 66 (fsys)
+            10 00 00 00 (0x10) - startBlock
+            58 20 00 00 (0x2058) - numOfBlocks
+            00 00 00 00 
+0x4ff32b50: 67 66 63 73 (scfg)
+            00 00 00 00 (0x0)
+            00 00 00 00 (0x0)
+            01 00 00 00 (0x1)
+            
+0x4ff32b60: 67 61 69 64 (diag)
+            00 00 00 00 (0x0)
+            00 00 00 00 (0x0)
+            01 00 00 00 (0x1)
+            
+0x4ff32b70: 74 62 62 66 (fbbt)
+            00 00 00 00 (0x0)
+            00 00 00 00 (0x0)
+            01 00 00 00 (0x1)
+            
+0x4ff32b80: 65 6e 6f 6e (none)
+            84 4d 7 59 
+            7f 9e 81 0f 
+            2d d4 c7 57 
+0x4ff32b90: 65 6e 6f 6e (none)
+            d4 64 1b 63 
+            76 e7 b5 78 
+            47 6e 48 75 
+0x4ff32ba0: 65 6e 6f 6e (none)
+            32 de 0d 1a 
+            1c 8c 96 65 
+            ec 3d 26 46 
+0x4ff32bb0: 65 6e 6f 6e (none)
+            c4 d3 d4 73 
+            30 2e 6f 74 
+            f6 8a de 6f 
+0x4ff32bc0: 65 6e 6f 6e (none)
+            23 e8 c0 49 
+            85 36 d5 14 
+            6c 85 0f 23 
+0x4ff32bd0: 65 6e 6f 6e (none)
+            b2 ec 06 3f 
+            07 48 59 3b 
+            04 23 aa 6c 
+0x4ff32be0: 65 6e 6f 6e (none)
+            ec 3b 41 25 
+            0b 0b 18 17 
+            b9 28 93 57 
+0x4ff32bf0: 65 6e 6f 6e (none)
+            ba a8 cc 11 
+            86 ab 32 4d 
+            c3 ac 07 3f 
+0x4ff32c00: 65 6e 6f 6e (none)
+            05 4a b4 5c 
+            f1 80 cf 16 
+            ec 5d 69 1c 
+0x4ff32c10: 65 6e 6f 6e (none)
+            67 68 85 0f 
+            33 cc b1 11 
+            b7 fb 22 2e 
+0x4ff32c20: 65 6e 6f 6e (none)
+            50 58 48 77 
+            a3 39 49 74 
+            e3 d2 a0 4f 
+0x4ff32c30: 65 6e 6f 6e (none)
+            d3 67 b8 68 
+            d9 5d 7f 3f 
+            34 5a e0 2a 
+0x4ff32c40: 65 6e 6f 6e (none)
+            5e 94 54 54 
+            a0 df ef 4d 
+            f2 d5 23 21 
+0x4ff32c50: 65 6e 6f 6e a8 27 9 09 f6 f8 cd 0d 05 b1 d7 52 
+0x4ff32c60: 65 6e 6f 6e 01 04 e6 24 be d9 6a 2a b4 c1 aa 0b 
+0x4ff32c70: 65 6e 6f 6e 44 85 9d 77 78 6e b2 4a fa a2 fa 21 
+0x4ff32c80: 65 6e 6f 6e 69 ef 81 61 e6 00 64 3e 23 7e 21 14 
+0x4ff32c90: 65 6e 6f 6e 1a cd 15 50 da 79 44 42 69 9e 9a 1a 
+0x4ff32ca0: 65 6e 6f 6e 7e b3 8d 36 4c 71 3b 6a 7e 51 7b 32 
+0x4ff32cb0: 65 6e 6f 6e 25 cf ba 29 b3 ab 5b 5d 48 6b bf 51 
+0x4ff32cc0: 65 6e 6f 6e 53 8b 4b 2b 3a 41 e3 72 94 e4 6a 11 
+0x4ff32cd0: 65 6e 6f 6e 31 3a b1 00 99 95 42 64 90 16 1f 63 
+0x4ff32ce0: 65 6e 6f 6e 57 6f ad 0e 44 d8 c9 6e ee ea 49 5c 
+0x4ff32cf0: 65 6e 6f 6e bc 46 7c 39 e9 8d 44 7e e5 c3 9c 5a 
+
+0x4ff32d00: 04 03 00 00 07 00 00 00 48 e5 f4 4f c8 26 f3 4f 
+0x4ff32d10: a1 00 00 00 00 08 00 00 e0 35 f3 4f 41 50 4c 2c 
+

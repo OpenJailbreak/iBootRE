@@ -1,0 +1,40 @@
+  0x4ff35088: bdev: 0x4ff35288 type: ibot offset: 0x00600 len: 0x2a999
+  0x4ff350c0: bdev: 0x4ff35288 type: dtre offset: 0x2b200 len: 0x8c19
+  0x4ff350f8: bdev: 0x4ff35288 type: logo offset: 0x34200 len: 0x25d9
+  0x4ff35130: bdev: 0x4ff35288 type: recm offset: 0x36c00 len: 0xbb59
+  0x4ff35168: bdev: 0x4ff35288 type: nsrv offset: 0x42c00 len: 0x5019
+  0x4ff351a0: bdev: 0x4ff35288 type: bat0 offset: 0x48000 len: 0xde19
+  0x4ff351d8: bdev: 0x4ff35288 type: bat1 offset: 0x56400 len: 0xff59
+  0x4ff35210: bdev: 0x4ff35288 type: glyC offset: 0x66600 len: 0x4fd9
+  0x4ff35248: bdev: 0x4ff35288 type: glyP offset: 0x6ba00 len: 0x4bd9
+  0x4ff316c8: bdev: 0x4ff35288 type: chg0 offset: 0x70800 len: 0x4d59
+  0x4ff31700: bdev: 0x4ff35288 type: chg1 offset: 0x75600 len: 0x6199
+  0x4ff31740: bdev: 0x4ff35288 type: batF offset: 0x7bc00 len: 0x12999
+
+
+0x41000000: 32 47 4d 49 (0x494d4732) IMG2
+            00 02 00 00 (0x200) blockSize
+            00 00 00 00 (0x0)
+            03 00 00 00 (0x3) startBlock
+0x41000010: fd 0b 00 00 (0xBFD) blockCount
+            00 00 00 00 (0x0)
+            00 00 00 00 (0x0)
+            00 00 00 00 (0x0)
+0x41000020: 00 00 00 00 (0x0)
+            00 00 00 00 (0x0)
+            00 00 00 00 (0x0)
+            00 00 00 00 (0x0)
+0x41000030: 71 5b 20 48 (0x48205B71) crc32
+            00 00 00 00 
+            00 00 00 00 
+            00 00 00 00
+0x41000040: 00 00 00 00 
+            00 00 00 00 
+            00 00 00 00 
+            00 00 00 00
+0x41000050: 00 00 00 00 
+            00 00 00 00 
+            00 00 00 00 
+            00 00 00 00
+
+

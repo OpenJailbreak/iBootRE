@@ -1,0 +1,100 @@
+bsd/sys/file_internal.h:#if CONFIG_EMBEDDED
+bsd/sys/unpcb.h:#if !CONFIG_EMBEDDED
+bsd/sys/unpcb.h:#endif /* !CONFIG_EMBEDDED */
+bsd/sys/imgact.h:#if CONFIG_EMBEDDED
+bsd/sys/socketvar.h:#if !CONFIG_EMBEDDED
+bsd/sys/socketvar.h:#endif /* !CONFIG_EMBEDDED */
+bsd/sys/socketvar.h:#if !CONFIG_EMBEDDED
+bsd/netinet/in_pcb.h:#if !CONFIG_EMBEDDED
+bsd/netinet/in_pcb.h:#endif /* !CONFIG_EMBEDDED */
+bsd/netinet/in_pcb.h:#if !CONFIG_EMBEDDED
+bsd/netinet/in_pcb.c:#if !CONFIG_EMBEDDED
+bsd/netinet/in_pcb.c:#if !CONFIG_EMBEDDED
+bsd/netinet/in_pcb.c:#endif /* !CONFIG_EMBEDDED */
+bsd/netinet/tcp_subr.c:#if !CONFIG_EMBEDDED
+bsd/netinet/tcp_subr.c:#endif /* !CONFIG_EMBEDDED */
+bsd/netinet/raw_ip.c:#if !CONFIG_EMBEDDED
+bsd/netinet/raw_ip.c:#endif /* !CONFIG_EMBEDDED */
+bsd/netinet/tcp_var.h:#if !CONFIG_EMBEDDED
+bsd/netinet/tcp_var.h:#endif /* !CONFIG_EMBEDDED */
+bsd/netinet/udp_usrreq.c:#if !CONFIG_EMBEDDED
+bsd/netinet/udp_usrreq.c:#endif /* !CONFIG_EMBEDDED */
+bsd/kern/kern_exit.c:#ifdef CONFIG_EMBEDDED
+bsd/kern/kern_proc.c:#ifdef CONFIG_EMBEDDED
+bsd/kern/kern_proc.c:#ifdef CONFIG_EMBEDDED
+bsd/kern/kern_proc.c:#ifdef CONFIG_EMBEDDED
+bsd/kern/kern_proc.c:#ifdef CONFIG_EMBEDDED
+bsd/kern/kern_proc.c:#ifdef CONFIG_EMBEDDED
+bsd/kern/uipc_socket2.c:#if !CONFIG_EMBEDDED
+bsd/kern/uipc_socket2.c:#endif /* !CONFIG_EMBEDDED */
+bsd/kern/uipc_usrreq.c:#if !CONFIG_EMBEDDED
+bsd/kern/uipc_usrreq.c:#endif /* !CONFIG_EMBEDDED */
+bsd/kern/kern_fork.c:#ifdef CONFIG_EMBEDDED
+bsd/kern/kern_fork.c:#else /* !CONFIG_EMBEDDED */
+bsd/kern/kern_fork.c:#endif /* !CONFIG_EMBEDDED */
+bsd/kern/kern_sysctl.c:#if !CONFIG_EMBEDDED
+bsd/kern/kern_sysctl.c:#if !CONFIG_EMBEDDED
+bsd/kern/bsd_init.c:#if CONFIG_EMBEDDED
+bsd/kern/bsd_init.c:#ifndef CONFIG_EMBEDDED
+bsd/kern/bsd_init.c:#ifdef CONFIG_EMBEDDED
+bsd/kern/bsd_init.c:#ifdef CONFIG_EMBEDDED
+bsd/kern/bsd_init.c:#ifdef CONFIG_EMBEDDED
+bsd/kern/bsd_init.c:#if CONFIG_EMBEDDED
+bsd/kern/bsd_init.c:#if CONFIG_EMBEDDED
+bsd/kern/bsd_init.c:#endif /* CONFIG_EMBEDDED */
+bsd/kern/bsd_init.c:#if CONFIG_EMBEDDED
+bsd/kern/kern_time.c:#ifndef CONFIG_EMBEDDED
+bsd/vfs/vfs_subr.c:#if CONFIG_EMBEDDED
+bsd/conf/MASTER:options   CONFIG_EMBEDDED			# <config_embedded>
+bsd/dev/dtrace/dtrace_ptss.c:#if CONFIG_EMBEDDED
+bsd/net/ether_if_module.c:#if CONFIG_EMBEDDED
+iokit/bsddev/IOKitBSDInit.cpp:#if CONFIG_EMBEDDED
+iokit/conf/MASTER:options   CONFIG_EMBEDDED                       # <config_embedded>
+iokit/Kernel/IOPMrootDomain.cpp:#if !CONFIG_EMBEDDED
+iokit/Kernel/IOPMrootDomain.cpp:#if !CONFIG_EMBEDDED
+iokit/Kernel/IOPMrootDomain.cpp:#endif /* !CONFIG_EMBEDDED */
+iokit/Kernel/IOMemoryDescriptor.cpp:#if CONFIG_EMBEDDED
+iokit/Kernel/IONVRAM.cpp:#if CONFIG_EMBEDDED
+iokit/Kernel/IOServicePM.cpp:#if CONFIG_EMBEDDED
+osfmk/kern/host.c:#if CONFIG_EMBEDDED
+osfmk/kern/host.c:#if CONFIG_EMBEDDED
+osfmk/kern/processor.c:#elif defined(CONFIG_EMBEDDED)
+osfmk/kern/thread.c:#if CONFIG_EMBEDDED
+osfmk/kern/debug.c:#if CONFIG_EMBEDDED
+osfmk/ppc/model_dep.c:#if CONFIG_EMBEDDED
+osfmk/conf/MASTER:options   CONFIG_EMBEDDED                       # <config_embedded>
+osfmk/kdp/kdp_udp.c:#if CONFIG_EMBEDDED
+osfmk/console/video_console.c:#if !CONFIG_EMBEDDED
+osfmk/console/video_console.c:#if !CONFIG_EMBEDDED
+osfmk/console/video_console.c:#if !CONFIG_EMBEDDED
+osfmk/console/video_console.c:#if !CONFIG_EMBEDDED
+osfmk/console/video_console.c:#endif /* !CONFIG_EMBEDDED */
+osfmk/vm/vm_resident.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_resident.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_resident.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_resident.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_resident.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_resident.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_resident.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_pageout.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_pageout.c:#ifdef	CONFIG_EMBEDDED
+osfmk/vm/vm_pageout.c:#ifdef	CONFIG_EMBEDDED
+osfmk/vm/vm_pageout.c:#ifdef	CONFIG_EMBEDDED
+osfmk/vm/vm_pageout.c:#ifdef	CONFIG_EMBEDDED
+osfmk/vm/vm_pageout.c:#ifndef	CONFIG_EMBEDDED
+osfmk/vm/vm_pageout.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_object.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_object.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_object.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_object.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_map.c:#if CONFIG_EMBEDDED
+osfmk/vm/vm_map.c:#endif /* CONFIG_EMBEDDED */
+osfmk/vm/vm_map.c:#if CONFIG_EMBEDDED
+osfmk/i386/AT386/model_dep.c:#if !CONFIG_EMBEDDED
+osfmk/i386/AT386/model_dep.c:#if CONFIG_EMBEDDED
+osfmk/i386/pmap.c:#ifdef CONFIG_EMBEDDED
+osfmk/i386/rtclock.c:#if CONFIG_EMBEDDED
+pexpert/gen/bootargs.c:#if CONFIG_EMBEDDED
+pexpert/pexpert/pexpert.h:#if !CONFIG_EMBEDDED
+pexpert/pexpert/pexpert.h:#endif /* !CONFIG_EMBEDDED */
+pexpert/conf/MASTER:options   CONFIG_EMBEDDED                       # <config_embedded>

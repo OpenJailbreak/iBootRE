@@ -1,0 +1,36 @@
+struct task_struct {
+    int start_magic = "task"; //0x4
+    void* prev_task; //0x8
+    void* next_task; //0xC
+    void* unknown_zero; //0x10
+    void* unknown_zero; //0x14
+    void* unknown_one; //0x18
+    void* unk; //0x1C
+    void* unk; //0x20
+    void* unk; //0x24
+    void* unknown_zero; //0x28
+    void* unk; //0x2C
+    void* unk; //0x30
+    void* unk; //0x34
+    void* unk; //0x38
+    void* unk; //0x3C
+    void* unk; //0x40
+    void* unk; //0x44
+    void* unk; //0x48
+    void* unk; //0x4C
+    void* unk; //0x50
+    void* unk; //0x54
+    void* unk; //0x58
+    void* unk; //0x5C
+    void* unk; //0x60
+    void* unk; //0x64
+    void* unk; //0x68
+    void* unk; //0x6C
+    void* task_handler; //0x70
+    void* task_priority; //0x74
+    void* task_memory; //0x78
+    int task_memory_size; //0x7C
+    char task_name[0x10]; //0x80
+    int stop_magic = "tsk2"; //0x90
+
+}

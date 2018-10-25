@@ -1,0 +1,7 @@
+HTTP/1.1 200 Apple WebObjects
+x-apple-date-generated: Wed, 02 Jun 2010 23:34:29 GMT
+x-webobjects-loadaverage: 1
+content-type: text/xml; charset=UTF-8
+content-length: 4677
+Set-Cookie: NSC_bmvocsjdl_qspe-mc=44cf9618a86c;path=/
+

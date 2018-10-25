@@ -1,0 +1,25 @@
+#define MEMZ_MAGIC 0x4D656D7A
+
+typedef struct memz_struct {
+    int filesize1;
+    int filesize2;
+    int x8
+    int type; // Memz
+    int data_out;
+    int data_in;
+    int x18
+} memz_struct;
+
+memz_struct* memz_create(int data_in, int size, int data_out) {
+    memz_struct* memz = malloc(sizeof(memz_struct));
+    memz->filesize1 = size;
+    memz->filesize2 = size;
+    memz->type = MEMZ_MAGIC
+    memz->data_out = data_out;
+    memz->data_in = data_in;
+    return memz;
+}
+
+
+memz_struct* memz = memz_create(0x41000000, 0xF00000, 0);
+sizeof(memz_struct) = 0x18;

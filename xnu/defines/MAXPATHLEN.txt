@@ -1,0 +1,292 @@
+bsd/sys/dirent.h: * ino_t is in effect; (MAXPATHLEN - 1) when 64-bit ino_t is in effect.
+bsd/sys/dirent.h:#define __DARWIN_MAXPATHLEN	1024
+bsd/sys/dirent.h:	char      d_name[__DARWIN_MAXPATHLEN]; /* entry name (up to MAXPATHLEN bytes) */ \
+bsd/sys/param.h: * MAXPATHLEN defines the longest permissable path length after expanding
+bsd/sys/param.h:#define	MAXPATHLEN	PATH_MAX
+bsd/sys/vnode.h:	char *		va_name;	/* Name for ATTR_CMN_NAME; MAXPATHLEN bytes */
+bsd/sys/vnode.h: @param pathbuf Destination for pathname; should be of size MAXPATHLEN
+bsd/sys/proc_info.h:	char			vip_path[MAXPATHLEN];	/* tail end of it  */
+bsd/sys/proc_info.h:	char			psem_name[MAXPATHLEN];
+bsd/sys/proc_info.h:	char			pshm_name[MAXPATHLEN];
+bsd/sys/proc_info.h:#define PROC_PIDPATHINFO_SIZE		(MAXPATHLEN)
+bsd/sys/proc_info.h:#define PROC_PIDPATHINFO_MAXSIZE	(4*MAXPATHLEN)
+bsd/sys/mount.h:#define	MNAMELEN	MAXPATHLEN	/* length of buffer for returned name */
+bsd/sys/mount.h:	char		f_mntonname[MAXPATHLEN];	/* directory on which mounted */ \
+bsd/sys/mount.h:	char		f_mntfromname[MAXPATHLEN];	/* mounted filesystem */ \
+bsd/sys/mount.h:	char		f_mntonname[MAXPATHLEN];/* directory on which mounted */
+bsd/sys/mount.h:	char		f_mntfromname[MAXPATHLEN];/* mounted filesystem */
+bsd/sys/utfconv.h: *    ENAMETOOLONG:  output did not fit or input exceeded MAXPATHLEN bytes
+bsd/kern/imageboot.c:	MALLOC_ZONE(root_path, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/kern/imageboot.c:	if(PE_parse_boot_argn("rp", root_path, MAXPATHLEN) == TRUE) {
+bsd/kern/imageboot.c:	FREE_ZONE(root_path, MAXPATHLEN, M_NAMEI);
+bsd/kern/imageboot.c:	MALLOC_ZONE(root_path, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/kern/imageboot.c:	if(PE_parse_boot_argn("rp", root_path, MAXPATHLEN) == FALSE) {
+bsd/kern/imageboot.c:	FREE_ZONE(root_path, MAXPATHLEN, M_NAMEI);
+bsd/kern/kern_proc.c:__private_extern__ char corefilename[MAXPATHLEN+1] = {"/cores/core.%P"};
+bsd/kern/posix_shm.c:	MALLOC_ZONE(pnbuf, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/kern/posix_shm.c:	pathlen = MAXPATHLEN;
+bsd/kern/posix_shm.c:	error = copyinstr(uap->name, (void *)pnbuf, MAXPATHLEN, &pathlen);
+bsd/kern/posix_shm.c:	FREE_ZONE(pnbuf, MAXPATHLEN, M_NAMEI);
+bsd/kern/posix_shm.c:		FREE_ZONE(pnbuf, MAXPATHLEN, M_NAMEI);
+bsd/kern/posix_shm.c:	MALLOC_ZONE(pnbuf, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/kern/posix_shm.c:	pathlen = MAXPATHLEN;
+bsd/kern/posix_shm.c:	error = copyinstr(uap->name, (void *)pnbuf, MAXPATHLEN, &pathlen);
+bsd/kern/posix_shm.c:	FREE_ZONE(pnbuf, MAXPATHLEN, M_NAMEI);
+bsd/kern/kern_exec.c:	len = MIN(MAXPATHLEN, imgp->ip_strspace);
+bsd/kern/mach_loader.c:	char vpath[MAXPATHLEN];
+bsd/kern/mach_loader.c:	len = MAXPATHLEN;
+bsd/kern/kern_core.c:	MALLOC(alloced_name, char *, MAXPATHLEN, M_TEMP, M_NOWAIT | M_ZERO);
+bsd/kern/kern_core.c:			   core_proc->p_pid, alloced_name, MAXPATHLEN)) {
+bsd/kern/kern_sysctl.c:__private_extern__ char corefilename[MAXPATHLEN+1];
+bsd/kern/kern_sysctl.c:		strlcpy(exec_archhandler_ppc.path, handler, MAXPATHLEN);
+bsd/kern/kern_descrip.c:		pathlen = MAXPATHLEN;
+bsd/kern/kern_descrip.c:		pathlen = MAXPATHLEN;
+bsd/kern/kern_descrip.c:		pathbufp = kalloc(MAXPATHLEN);
+bsd/kern/kern_descrip.c:		if ( (error = copyinstr(argp, pathbufp, MAXPATHLEN, &pathlen)) == 0 ) {
+bsd/kern/kern_descrip.c:		kfree(pathbufp, MAXPATHLEN);
+bsd/kern/proc_info.c:			count = MAXPATHLEN;
+bsd/kern/proc_info.c:			pinfo->pvip.vip_path[MAXPATHLEN-1] = 0;
+bsd/kern/proc_info.c:			count = MAXPATHLEN;
+bsd/kern/proc_info.c:			preginfo.prp_vip.vip_path[MAXPATHLEN-1] = 0;
+bsd/kern/proc_info.c:				count = MAXPATHLEN;
+bsd/kern/proc_info.c:				pvninfo.pvi_cdir.vip_path[MAXPATHLEN-1] = 0;
+bsd/kern/proc_info.c:				count = MAXPATHLEN;
+bsd/kern/proc_info.c:				pvninfo.pvi_rdir.vip_path[MAXPATHLEN-1] = 0;
+bsd/kern/proc_info.c:			size = MAXPATHLEN;
+bsd/kern/proc_info.c:		count = MAXPATHLEN;
+bsd/kern/proc_info.c:		vfip.pvip.vip_path[MAXPATHLEN-1] = 0;
+bsd/kern/kern_authorization.c:		name_len = MAXPATHLEN;
+bsd/kern/posix_sem.c:	MALLOC_ZONE(pnbuf, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/kern/posix_sem.c:	pathlen = MAXPATHLEN;
+bsd/kern/posix_sem.c:	error = copyinstr(uap->name, pnbuf, MAXPATHLEN, &pathlen);
+bsd/kern/posix_sem.c:	FREE_ZONE(pnbuf, MAXPATHLEN, M_NAMEI);
+bsd/kern/posix_sem.c:		FREE_ZONE(pnbuf, MAXPATHLEN, M_NAMEI);
+bsd/kern/posix_sem.c:	MALLOC_ZONE(pnbuf, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/kern/posix_sem.c:	pathlen = MAXPATHLEN;
+bsd/kern/posix_sem.c:	error = copyinstr(uap->name, pnbuf, MAXPATHLEN, &pathlen);
+bsd/kern/posix_sem.c:	FREE_ZONE(pnbuf, MAXPATHLEN, M_NAMEI);
+bsd/kern/kern_newsysctl.c:	if (req->newlen >= MAXPATHLEN)	/* XXX arbitrary, undocumented */
+bsd/kern/bsd_init.c:		strlcpy(exec_archhandler_ppc.path, kRosettaStandIn_str, MAXPATHLEN);
+bsd/kern/kern_malloc.c:	{ MAXPATHLEN,	KMZ_CREATEZONE },		/* 12 M_NAMEI */
+bsd/kern/netboot.c:    MALLOC_ZONE(vndevice, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/kern/netboot.c:    if (PE_parse_boot_argn("vndevice", vndevice, MAXPATHLEN) == TRUE) {
+bsd/kern/netboot.c:    FREE_ZONE(vndevice, MAXPATHLEN, M_NAMEI);
+bsd/kern/netboot.c:    MALLOC_ZONE(root_path, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/kern/netboot.c:    if (PE_parse_boot_argn("rp", root_path, MAXPATHLEN) == TRUE
+bsd/kern/netboot.c:	|| PE_parse_boot_argn("rootpath", root_path, MAXPATHLEN) == TRUE
+bsd/kern/netboot.c:    FREE_ZONE(root_path, MAXPATHLEN, M_NAMEI);
+bsd/vfs/vfs_subr.c:	(void) copystr((const void *)devname, mp->mnt_vfsstat.f_mntfromname, MAXPATHLEN - 1, NULL);
+bsd/vfs/vfs_fslog.c:		MALLOC(path, char *, MAXPATHLEN, M_TEMP, M_WAITOK);
+bsd/vfs/vfs_fslog.c:			len = MAXPATHLEN;
+bsd/vfs/vfs_fslog.c:				err = escape_str(path, len, MAXPATHLEN);
+bsd/vfs/vfs_xattr.c:	MALLOC_ZONE(path, char *, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/vfs/vfs_xattr.c:	pathlen = MAXPATHLEN;
+bsd/vfs/vfs_xattr.c:		FREE_ZONE(path, MAXPATHLEN, M_NAMEI);
+bsd/vfs/vfs_xattr.c:	FREE_ZONE(path, MAXPATHLEN, M_NAMEI);
+bsd/vfs/vfs_cache.c:				MALLOC_ZONE(va.va_name, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/vfs/vfs_cache.c:				FREE_ZONE(va.va_name, MAXPATHLEN, M_NAMEI);
+bsd/vfs/vfs_syscalls.c:	MALLOC_ZONE((x), char *, MAXPATHLEN, M_NAMEI, M_WAITOK); 
+bsd/vfs/vfs_syscalls.c:	FREE_ZONE((x), MAXPATHLEN, M_NAMEI);
+bsd/vfs/vfs_syscalls.c:	strncpy(mp->mnt_vfsstat.f_mntonname, nd.ni_cnd.cn_pnbuf, MAXPATHLEN);
+bsd/vfs/vfs_syscalls.c:			strncpy(mp->mnt_vfsstat.f_mntfromname, nd1.ni_cnd.cn_pnbuf, MAXPATHLEN);
+bsd/vfs/vfs_syscalls.c:	char qfpath[MAXPATHLEN];
+bsd/vfs/vfs_syscalls.c:		fnamelen = MAXPATHLEN;
+bsd/vfs/vfs_syscalls.c:		datap = kalloc(MAXPATHLEN);
+bsd/vfs/vfs_syscalls.c:		error = copyinstr(uap->arg, datap, MAXPATHLEN, &fnamelen);
+bsd/vfs/vfs_syscalls.c:			kfree(datap, MAXPATHLEN);
+bsd/vfs/vfs_syscalls.c:	strlcpy(&sfs.f_mntonname[0], &sfsp->f_mntonname[0], MAXPATHLEN);
+bsd/vfs/vfs_syscalls.c:	strlcpy(&sfs.f_mntfromname[0], &sfsp->f_mntfromname[0], MAXPATHLEN);
+bsd/vfs/vfs_syscalls.c:	if (ret == 0 && len < (MAXPATHLEN - 1)) {
+bsd/vfs/vfs_syscalls.c:			len += strlcpy(&path[len], leafname, MAXPATHLEN-len) + 1;
+bsd/vfs/vfs_syscalls.c:			if (len > MAXPATHLEN) {
+bsd/vfs/vfs_syscalls.c:		len = safe_getpath(dvp, nd.ni_cnd.cn_nameptr, target_path, MAXPATHLEN, &truncated);
+bsd/vfs/vfs_syscalls.c:			link_name_len = MAXPATHLEN;
+bsd/vfs/vfs_syscalls.c:	MALLOC_ZONE(path, char *, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/vfs/vfs_syscalls.c:	error = copyinstr(uap->path, path, MAXPATHLEN, &dummy);
+bsd/vfs/vfs_syscalls.c:			len = MAXPATHLEN;
+bsd/vfs/vfs_syscalls.c:			if ((len + 1 + nd.ni_cnd.cn_namelen + 1) < MAXPATHLEN) {
+bsd/vfs/vfs_syscalls.c:				strlcpy(&new_link_path[len], nd.ni_cnd.cn_nameptr, MAXPATHLEN-len);
+bsd/vfs/vfs_syscalls.c:	FREE_ZONE(path, MAXPATHLEN, M_NAMEI);
+bsd/vfs/vfs_syscalls.c:		len = safe_getpath(dvp, ndp->ni_cnd.cn_nameptr, path, MAXPATHLEN, &truncated_path);
+bsd/vfs/vfs_syscalls.c:		from_len = safe_getpath(fdvp, fromnd.ni_cnd.cn_nameptr, from_name, MAXPATHLEN, &from_truncated);
+bsd/vfs/vfs_syscalls.c:		to_len = safe_getpath(tdvp, tond.ni_cnd.cn_nameptr, to_name, MAXPATHLEN, &to_truncated);
+bsd/vfs/vfs_syscalls.c:		MALLOC_ZONE(tobuf, char *, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/vfs/vfs_syscalls.c:		error = copyinstr(uap->to, tobuf, MAXPATHLEN, &len);
+bsd/vfs/vfs_syscalls.c:			maxlen = MAXPATHLEN - (pathend - mp->mnt_vfsstat.f_mntonname);
+bsd/vfs/vfs_syscalls.c:		FREE_ZONE(tobuf, MAXPATHLEN, M_NAMEI);
+bsd/vfs/vfs_syscalls.c:				len = safe_getpath(vp, NULL, path, MAXPATHLEN, &truncated);
+bsd/vfs/vfs_syscalls.c:	((sizeof(struct direntry) + (namlen) - (MAXPATHLEN-1) + 7) & ~7)
+bsd/vfs/vfs_syscalls.c:		flen = safe_getpath(fvp, NULL, fpath, MAXPATHLEN, &from_truncated);
+bsd/vfs/vfs_syscalls.c:		slen = safe_getpath(svp, NULL, spath, MAXPATHLEN, &to_truncated);
+bsd/vfs/vfs_syscalls.c:		if (string_ref->attr_length > MAXPATHLEN) {
+bsd/vfs/vfs_utfconv.c: *    ENAMETOOLONG:  output did not fit or input exceeded MAXPATHLEN bytes
+bsd/vfs/vfs_utfconv.c:	if (inbuflen > MAXPATHLEN) {
+bsd/vfs/vfs_fsevents.c:static char    last_str[MAXPATHLEN];
+bsd/vfs/vfs_fsevents.c:	    pathbuff_len = MAXPATHLEN;
+bsd/vfs/vfs_fsevents.c:		    pathbuff_len = MAXPATHLEN;
+bsd/vfs/vfs_fsevents.c:					strlcpy(pathbuff, vp->v_mount->mnt_vfsstat.f_mntonname, MAXPATHLEN);
+bsd/vfs/vfs_fsevents.c:				pathbuff_len = MAXPATHLEN;
+bsd/vfs/vfs_fsevents.c://       2*MAXPATHLEN + 2*sizeof(fse_info) + sizeof(int)
+bsd/vfs/vfs_fsevents.c:    MALLOC_ZONE(path, char *, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/vfs/vfs_fsevents.c:    FREE_ZONE(path, MAXPATHLEN, M_NAMEI);
+bsd/vfs/vfs_fsevents.c:    char pathbuf[MAXPATHLEN];
+bsd/vfs/vfs_fsevents.c:	MALLOC_ZONE(path, char *, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/vfs/vfs_fsevents.c:	FREE_ZONE(path, MAXPATHLEN, M_NAMEI);
+bsd/vfs/vfs_attrlist.c:			vs.f_vol_name = (char *) kalloc(MAXPATHLEN);
+bsd/vfs/vfs_attrlist.c:		vs.f_vol_name[MAXPATHLEN-1] = '\0'; /* Ensure nul-termination */
+bsd/vfs/vfs_attrlist.c:		kfree(vs.f_vol_name, MAXPATHLEN);
+bsd/vfs/vfs_attrlist.c:		fullpathptr = (char*) kalloc(MAXPATHLEN);
+bsd/vfs/vfs_attrlist.c:			va.va_name = (char *) kalloc(MAXPATHLEN);
+bsd/vfs/vfs_attrlist.c:			va.va_name[MAXPATHLEN-1] = '\0';	/* Ensure nul-termination */
+bsd/vfs/vfs_attrlist.c:		int len = MAXPATHLEN;
+bsd/vfs/vfs_attrlist.c:		kfree(va.va_name, MAXPATHLEN);
+bsd/vfs/vfs_attrlist.c:		kfree(fullpathptr, MAXPATHLEN);
+bsd/vfs/vfs_lookup.c:		MALLOC_ZONE(cnp->cn_pnbuf, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/vfs/vfs_lookup.c:		cnp->cn_pnlen = MAXPATHLEN;
+bsd/vfs/vfs_lookup.c:		MALLOC_ZONE(realpath, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/vfs/vfs_lookup.c:			 * MAXPATHLEN characters.  In other failure cases, we may be dealing with a path
+bsd/vfs/vfs_lookup.c:			if ((realpath_err= vfs_getrealpath(&cnp->cn_pnbuf[6], realpath, MAXPATHLEN, ctx))) {
+bsd/vfs/vfs_lookup.c:				FREE_ZONE(realpath, MAXPATHLEN, M_NAMEI);
+bsd/vfs/vfs_lookup.c:				cnp->cn_pnlen = MAXPATHLEN;
+bsd/vfs/vfs_lookup.c:			MALLOC_ZONE(cp, char *, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/vfs/vfs_lookup.c:		uio_addiov(auio, CAST_USER_ADDR_T(cp), MAXPATHLEN);
+bsd/vfs/vfs_lookup.c:				FREE_ZONE(cp, MAXPATHLEN, M_NAMEI);
+bsd/vfs/vfs_lookup.c:		 * because 0 <= uio_resid <= MAXPATHLEN and MAXPATHLEN
+bsd/vfs/vfs_lookup.c:		linklen = MAXPATHLEN - (u_int)uio_resid(auio);
+bsd/vfs/vfs_lookup.c:		if (linklen + ndp->ni_pathlen > MAXPATHLEN) {
+bsd/vfs/vfs_lookup.c:				FREE_ZONE(cp, MAXPATHLEN, M_NAMEI);
+bsd/vfs/vfs_lookup.c:			cnp->cn_pnlen = MAXPATHLEN;
+bsd/vfs/vfs_lookup.c:		int attempt = strlcat(realpath, str, MAXPATHLEN);
+bsd/vfs/vfs_lookup.c:		if (attempt > MAXPATHLEN){
+bsd/miscfs/devfs/devfs_vfsops.c:	bzero(mp->mnt_vfsstat.f_mntfromname, MAXPATHLEN);
+bsd/miscfs/devfs/devfs_vfsops.c:	(void) copystr(mntname, mp->mnt_vfsstat.f_mntonname, MAXPATHLEN - 1, 0);
+bsd/miscfs/nullfs/null_vfsops.c:	(void) copyinstr(args.target, mp->mnt_vfsstat.f_mntfromname, MAXPATHLEN - 1, 
+bsd/man/man2/getfsstat.2:#define MAXPATHLEN      1024	
+bsd/man/man2/getfsstat.2:#define MNAMELEN        MAXPATHLEN
+bsd/man/man2/getfsstat.2:    char        f_mntonname[MAXPATHLEN];        /* directory on which mounted */ 
+bsd/man/man2/getfsstat.2:    char        f_mntfromname[MAXPATHLEN];      /* mounted filesystem */ 
+bsd/man/man2/getattrlist.2:.Dv MAXPATHLEN .
+bsd/man/man2/getattrlist.2:.Dv MAXPATHLEN .
+bsd/man/man2/getattrlist.2:    char            mountPointSpace[MAXPATHLEN];
+bsd/man/man2/getattrlist.2:    char            volNameSpace[MAXPATHLEN];
+bsd/man/man2/fcntl.2:.Sy MAXPATHLEN
+bsd/man/man2/intro.2:.Pq Dv MAXPATHLEN Ns -1
+bsd/man/man2/intro.2:.Pq Dv MAXPATHLEN
+bsd/man/man2/statfs.2:#define MAXPATHLEN      1024	
+bsd/man/man2/statfs.2:#define MNAMELEN        MAXPATHLEN
+bsd/man/man2/statfs.2:    char        f_mntonname[MAXPATHLEN];        /* directory on which mounted */ 
+bsd/man/man2/statfs.2:    char        f_mntfromname[MAXPATHLEN];      /* mounted filesystem */ 
+bsd/hfs/hfs_fsctl.h:typedef char pathname_t[MAXPATHLEN];
+bsd/hfs/hfs.h:	((sizeof(struct direntry) + (namlen) - (MAXPATHLEN-1) + 3) & ~3)
+bsd/hfs/hfs_catalog.c:	bufsize = MAXPATHLEN + (maxlinks * sizeof(linkinfo_t)) + sizeof(*iterator);
+bsd/hfs/hfs_catalog.c:	state.cbs_linkinfo = (linkinfo_t *)((char *)buffer + MAXPATHLEN);
+bsd/hfs/hfs_vfsops.c:		if ((newlen <= 0) || (newlen > MAXPATHLEN)) 
+bsd/hfs/hfs_vfsops.c:		bufsize = MAX(newlen * 3, MAXPATHLEN);
+bsd/hfs/hfs_vfsops.c:		MALLOC_ZONE(cn.cn_pnbuf, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/hfs/hfs_vfsops.c:		cn.cn_pnlen = MAXPATHLEN;
+bsd/hfs/hfs_vfsops.c:		strlcpy(fsap->f_vol_name, (char *) hfsmp->vcbVN, MAXPATHLEN);
+bsd/hfs/hfs_vnops.c:			strlcpy(vap->va_name, (const char*) linkdesc.cd_nameptr, MAXPATHLEN);
+bsd/hfs/hfs_vnops.c:			strlcpy(vap->va_name, (const char*) cp->c_desc.cd_nameptr, MAXPATHLEN);
+bsd/hfs/hfs_vnops.c:	if (fp->ff_size == 0 || fp->ff_size > MAXPATHLEN) {
+bsd/hfs/hfs_vnops.c:			MALLOC_ZONE(cn.cn_pnbuf, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/hfs/hfs_vnops.c:			cn.cn_pnlen = MAXPATHLEN;
+bsd/hfs/hfs_vnops.c:			cn.cn_namelen = snprintf(cn.cn_nameptr, MAXPATHLEN,
+bsd/machine/exec.h:	char	path[MAXPATHLEN];
+bsd/machine/exec.h:	char path[MAXPATHLEN];
+bsd/net/pf_ruleset.c:	p = (char *)rs_malloc(MAXPATHLEN);
+bsd/net/pf_ruleset.c:	bzero(p, MAXPATHLEN);
+bsd/net/pf_ruleset.c:	strlcpy(p, path, MAXPATHLEN);
+bsd/net/pf_ruleset.c:	strlcpy(p, path, MAXPATHLEN);
+bsd/net/pf_ruleset.c:		    MAXPATHLEN - PF_ANCHOR_NAME_SIZE - 1)) {
+bsd/net/pf_ruleset.c:	path = (char *)rs_malloc(MAXPATHLEN);
+bsd/net/pf_ruleset.c:	bzero(path, MAXPATHLEN);
+bsd/net/pf_ruleset.c:		strlcpy(path, name + 1, MAXPATHLEN);
+bsd/net/pf_ruleset.c:			strlcpy(path, s->anchor->path, MAXPATHLEN);
+bsd/net/pf_ruleset.c:			strlcat(path, "/", MAXPATHLEN);
+bsd/net/pf_ruleset.c:		strlcat(path, name, MAXPATHLEN);
+bsd/net/pf_ruleset.c:		a = (char *)rs_malloc(MAXPATHLEN);
+bsd/net/pf_ruleset.c:		bzero(a, MAXPATHLEN);
+bsd/net/pf_ruleset.c:			strlcpy(a, rs->anchor->path, MAXPATHLEN);
+bsd/net/pf_table.c:	size_t siz = MAXPATHLEN;
+bsd/net/pfvar.h:	char			 path[MAXPATHLEN];
+bsd/net/pfvar.h:	char			 pfrt_anchor[MAXPATHLEN];
+bsd/net/pfvar.h:	char			 anchor[MAXPATHLEN];
+bsd/net/pfvar.h:	char		 anchor[MAXPATHLEN];
+bsd/net/pfvar.h:	char		 anchor_call[MAXPATHLEN];
+bsd/net/pfvar.h:	char		 path[MAXPATHLEN];
+bsd/net/pfvar.h:		char		anchor[MAXPATHLEN];
+bsd/security/audit/audit_arg.c:		ar->k_ar.ar_arg_text = malloc(MAXPATHLEN, M_AUDITTEXT, 
+bsd/security/audit/audit_arg.c:	strncpy(ar->k_ar.ar_arg_text, text, MAXPATHLEN);
+bsd/security/audit/audit_arg.c:		*pathp = malloc(MAXPATHLEN, M_AUDITPATH, M_WAITOK);
+bsd/security/audit/audit_arg.c:		*pathp = malloc(MAXPATHLEN, M_AUDITPATH, M_WAITOK);
+bsd/security/audit/audit_arg.c:	len = MAXPATHLEN;
+bsd/security/audit/audit.c:		*pathp = malloc(MAXPATHLEN, M_AUDITPATH, M_WAITOK);
+bsd/security/audit/audit_bsm_klib.c:		len = MAXPATHLEN;
+bsd/security/audit/audit_bsm_klib.c:		if (len < MAXPATHLEN)
+bsd/security/audit/audit_bsm_klib.c:		strlcpy(cpath + len, bufp, MAXPATHLEN - len);
+bsd/security/audit/audit_bsm_klib.c:		strlcpy(cpath, bufp, MAXPATHLEN);
+bsd/nfs/nfs_boot.c:	MALLOC_ZONE(nd->nd_root.ndm_path, char *, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/nfs/nfs_boot.c:	MALLOC_ZONE(nd->nd_root.ndm_mntfrom, char *, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/nfs/nfs_boot.c:			     nd->nd_root.ndm_path, MAXPATHLEN) == TRUE) {
+bsd/nfs/nfs_boot.c:		MALLOC_ZONE(nd->nd_private.ndm_path, char *, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/nfs/nfs_boot.c:		MALLOC_ZONE(nd->nd_private.ndm_mntfrom, char *, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/nfs/nfs_boot.c:			MALLOC_ZONE(check_path, char *, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/nfs/nfs_boot.c:			snprintf(check_path, MAXPATHLEN, "%s/private", nd->nd_root.ndm_path);
+bsd/nfs/nfs_boot.c:			    && (strncmp(check_path, nd->nd_private.ndm_path, MAXPATHLEN) == 0)) {
+bsd/nfs/nfs_boot.c:			FREE_ZONE(check_path, MAXPATHLEN, M_NAMEI);
+bsd/nfs/nfs_boot.c:	endp = dp + MAXPATHLEN - 1;
+bsd/nfs/nfs_boot.c:	if (path_len >= MAXPATHLEN)
+bsd/nfs/nfsproto.h:#define	NFS_MAXPATHLEN	1024
+bsd/nfs/nfsnode.h:	((sizeof(struct direntry) + (namlen) - (MAXPATHLEN-1) + 7) & ~7)
+bsd/nfs/nfs_vnops.c:	error = nfs_buf_get(np, 0, NFS_MAXPATHLEN, vfs_context_thread(ctx), NBLK_READ, &bp);
+bsd/nfs/nfs_vnops.c:	    ((cnp->cn_namelen > NFS_MAXNAMLEN) || (slen > NFS_MAXPATHLEN)))
+bsd/nfs/nfs_vfsops.c:					  MAXPATHLEN, M_NAMEI);
+bsd/nfs/nfs_vfsops.c:					  MAXPATHLEN, M_NAMEI);
+bsd/nfs/nfs_vfsops.c:					  MAXPATHLEN, M_NAMEI);
+bsd/nfs/nfs_vfsops.c:					  MAXPATHLEN, M_NAMEI);
+bsd/nfs/nfs_vfsops.c:		FREE_ZONE(nd.nd_root.ndm_mntfrom, MAXPATHLEN, M_NAMEI);
+bsd/nfs/nfs_vfsops.c:		FREE_ZONE(nd.nd_root.ndm_path, MAXPATHLEN, M_NAMEI);
+bsd/nfs/nfs_vfsops.c:		FREE_ZONE(nd.nd_private.ndm_mntfrom, MAXPATHLEN, M_NAMEI);
+bsd/nfs/nfs_vfsops.c:		FREE_ZONE(nd.nd_private.ndm_path, MAXPATHLEN, M_NAMEI);
+bsd/nfs/nfs_vfsops.c:	(void) copystr(mntname, mp->mnt_vfsstat.f_mntonname, MAXPATHLEN - 1, 0);
+bsd/nfs/nfs_vfsops.c:	(void) copystr(ndmntp->ndm_mntfrom, mp->mnt_vfsstat.f_mntfromname, MAXPATHLEN - 1, 0);
+bsd/nfs/nfs_vfsops.c:	error = copyinstr(args.hostname, mntfrom, MAXPATHLEN-1, &len);
+bsd/nfs/nfs_vfsops.c:	bzero(&mntfrom[len], MAXPATHLEN - len);
+bsd/nfs/nfs_serv.c:	len = NFS_MAXPATHLEN;
+bsd/nfs/nfs_serv.c:		nfsm_adj(mpath, NFS_MAXPATHLEN-tlen, tlen-len);
+bsd/nfs/nfs_serv.c:				plen = MAXPATHLEN;
+bsd/nfs/nfs_serv.c:	fromni.ni_cnd.cn_pnlen = MAXPATHLEN;
+bsd/nfs/nfs_serv.c:	toni.ni_cnd.cn_pnlen = MAXPATHLEN;
+bsd/nfs/nfs_serv.c:			MALLOC_ZONE(topath, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/nfs/nfs_serv.c:			MALLOC_ZONE(frompath, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/nfs/nfs_serv.c:			from_len = safe_getpath(fdvp, fromni.ni_cnd.cn_nameptr, from_name, MAXPATHLEN, &from_truncated);
+bsd/nfs/nfs_serv.c:			to_len = safe_getpath(tdvp, toni.ni_cnd.cn_nameptr, to_name, MAXPATHLEN, &to_truncated);
+bsd/nfs/nfs_serv.c:		FREE_ZONE(frompath, MAXPATHLEN, M_NAMEI);
+bsd/nfs/nfs_serv.c:		FREE_ZONE(topath, MAXPATHLEN, M_NAMEI);
+bsd/nfs/nfs_serv.c:			plen = safe_getpath(dvp, ni.ni_cnd.cn_nameptr, target_path, MAXPATHLEN, &truncated);
+bsd/nfs/nfs_serv.c:	if (!error && (((nd->nd_vers == NFS_VER2) && (linkdatalen > NFS_MAXPATHLEN)) ||
+bsd/nfs/nfs_serv.c:			((nd->nd_vers == NFS_VER3) && (linkdatalen > MAXPATHLEN))))
+bsd/nfs/nfs_serv.c:			plen = MAXPATHLEN;
+bsd/nfs/nfs_subs.c:	if (len > (MAXPATHLEN - 1))
+bsd/nfs/nfs_subs.c:	MALLOC_ZONE(cnp->cn_pnbuf, caddr_t, MAXPATHLEN, M_NAMEI, M_WAITOK);
+bsd/nfs/nfs_subs.c:	cnp->cn_pnlen = MAXPATHLEN;
+bsd/nfs/nfs_subs.c:			FREE_ZONE(cnp->cn_pnbuf, MAXPATHLEN, M_NAMEI);
+bsd/nfs/nfs_subs.c:	char path[MAXPATHLEN];
+bsd/nfs/nfs_subs.c:		error = copyinstr(unxa->nxa_fspath, path, MAXPATHLEN, (size_t *)&pathlen);
+bsd/nfs/nfs_subs.c:	error = copyinstr(unxa->nxa_fspath, path, MAXPATHLEN, (size_t *)&pathlen);
+bsd/nfs/nfs_subs.c:		if (strncmp(path, nxfs->nxfs_path, MAXPATHLEN)) {
+bsd/nfs/nfs_subs.c:			if (strncmp(nxfs->nxfs_path, nxfs2->nxfs_path, MAXPATHLEN) > 0)
+bsd/nfs/nfs_subs.c:		error = copyinstr(unxa->nxa_exppath, path, MAXPATHLEN, (size_t *)&pathlen);
+bsd/nfs/nfs_subs.c:			if (strncmp(path, nx->nx_path, MAXPATHLEN)) {
+bsd/nfs/nfs_subs.c:				if (strncmp(nx->nx_path, nx2->nx_path, MAXPATHLEN) > 0)
+bsd/nfs/nfs_syscalls.c:	char path[MAXPATHLEN], *ptr;
+bsd/nfs/nfs_syscalls.c:	error = copyinstr(uap->fname, path, MAXPATHLEN, (size_t *)&pathlen);
+bsd/nfs/nfs_syscalls.c:		if (!strncmp(nxfs->nxfs_path, ptr, MAXPATHLEN))
+iokit/Kernel/IOHibernateIO.cpp:static char			gIOHibernateFilename[MAXPATHLEN+1];
+tools/tests/libMicro/realpath.c:#define	MAXPATHLEN		1024
+tools/tests/libMicro/realpath.c:	char			path[MAXPATHLEN];
+tools/tests/libMicro/chdir.c:#define	MAXPATHLEN		1024
+tools/tests/libMicro/chdir.c:	char 			buf[MAXPATHLEN];
+tools/tests/libMicro/chdir.c:		if (optg && (getcwd(buf, MAXPATHLEN) == NULL)) {
+tools/tests/libMicro/apple/create_file.c:#define MAXPATHLEN	1024
+tools/tests/libMicro/apple/create_file.c:	optf = malloc(MAXPATHLEN);

@@ -1,0 +1,29 @@
+bsd/dev/dtrace/blist.c:			size = strtol(ptr, NULL, 0);
+bsd/libkern/strtol.c: * strol.c - The functions strtol() & strtoul() are exported as public API
+bsd/libkern/strtol.c: *      Created based on BSD4.4's strtol.c & strtoul.c.
+bsd/libkern/strtol.c:strtol(nptr, endptr, base)
+bsd/libkern/strtol.c:	 * See strtol for comments as to the logic used.
+bsd/libkern/libkern.h:extern long	strtol(const char*, char **, int);
+bsd/man/man9/style.9:			num = strtol(optarg, &ep, 10);
+bsd/nfs/nfs4_subs.c:			nvap->nva_uid = strtol(s, NULL, 10);
+bsd/nfs/nfs4_subs.c:			nvap->nva_gid = strtol(s, NULL, 10);
+config/System6.0.exports:_strtol
+config/Libkern.exports:_strtol
+iokit/bsddev/IOKitBSDInit.cpp:                    partition = strtol( look + 1, 0, 0 );
+iokit/bsddev/IOKitBSDInit.cpp:                    unit = strtol( look + 1, &comp, 16 );
+iokit/bsddev/IOKitBSDInit.cpp:                        lun = strtol( comp + 1, 0, 16 );
+iokit/Kernel/IONVRAM.cpp:    tmpNumber = OSNumber::withNumber(strtol((const char *)propData, 0, 0), 32);
+iokit/Kernel/IOStringFuncs.c: * strol.c - The functions strtol() & strtoul() are exported as public API
+iokit/Kernel/IOStringFuncs.c: *      Created based on BSD4.4's strtol.c & strtoul.c.
+iokit/Kernel/IOStringFuncs.c:long strtol(const char *nptr, char **endptr, int base);
+iokit/Kernel/IOStringFuncs.c:strtol(const char *nptr, char **endptr, int base)
+iokit/Kernel/IOStringFuncs.c:	 * See strtol for comments as to the logic used.
+libkern/c++/OSUnserializeXML.cpp:		    object->idref = strtol(values[i], NULL, 0);
+libkern/c++/OSUnserializeXML.cpp:		    object->idref = strtol(values[i], NULL, 0);
+libkern/c++/OSUnserializeXML.y:		    object->idref = strtol(values[i], NULL, 0);
+libkern/c++/OSUnserializeXML.y:		    object->idref = strtol(values[i], NULL, 0);
+osfmk/libsa/stdlib.h: * 	Added strtol and strtoul prototypes.
+osfmk/libsa/stdlib.h:extern long int	strtol (const char *, char **, int);
+pexpert/ppc/pe_kprintf.c:extern long strtol(const char *, char **, int);
+pexpert/ppc/pe_kprintf.c:			gPESerialBaud = strtol(baud, NULL, 0);
+pexpert/ppc/pe_kprintf.c:			gPESerialBaud = strtol(baud, NULL, 0); 

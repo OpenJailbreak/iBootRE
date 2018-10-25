@@ -1,0 +1,42 @@
+	while( TRUE) {
+		int err;
+
+		//bsd_init_kprintf("calling setconf\n");
+	    /*
+	     * calls into IOKit can generate networking registrations
+	     * which needs to be under network funnel. Right thing to do
+	     * here is to drop the funnel alltogether and regrab it afterwards
+	     */
+	    err = IOFindBSDRoot(rootdevice, sizeof(rootdevice), &rootdev, &flags);
+	    if( err) {
+		    printf("setconf: IOFindBSDRoot returned an error (%d);"
+			    "setting rootdevice to 'sd0a'.\n", err); /* XXX DEBUG TEMP */
+		    rootdev = makedev( 6, 0 );
+		    strlcpy(rootdevice, "sd0a", sizeof(rootdevice));
+		    flags = 0;
+	    }
+
+		bsd_init_kprintf("vfs_mountroot\n");
+		if (0 == (err = vfs_mountroot()))
+			break;
+			
+		rootdevice[0] = '\0';
+		printf("cannot mount root, errno = %d\n", err);
+		boothowto |= RB_ASKNAME;
+	}
+
+	IOSecureBSDRoot(rootdevice);
+
+	context.vc_thread = current_thread();
+	context.vc_ucred = kernproc->p_ucred;
+	mountlist.tqh_first->mnt_flag |= MNT_ROOTFS;
+
+	bsd_init_kprintf("calling VFS_ROOT\n");
+	
+	/* Get the vnode for '/'.  Set fdp->fd_fd.fd_cdir to reference it. */
+	if (VFS_ROOT(mountlist.tqh_first, &rootvnode, &context))
+		panic("bsd_init: cannot find root vnode: %s", PE_boot_args());
+	rootvnode->v_flag |= VROOT;
+	(void)vnode_ref(rootvnode);
+	(void)vnode_put(rootvnode);
+	filedesc0.fd_cdir = rootvnode;

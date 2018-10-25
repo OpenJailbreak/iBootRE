@@ -1,0 +1,113 @@
+bsd/sys/dtrace_impl.h:extern void dtrace_copyinstr(uintptr_t, uintptr_t, size_t, volatile uint16_t *);
+bsd/sys/dtrace_impl.h:extern void dtrace_copyinstr(user_addr_t, uintptr_t, size_t, volatile uint16_t *);
+bsd/sys/dtrace.h: * appropriate use of DTrace primitives like copyin() and copyinstr() to
+bsd/sys/dtrace.h: *    copyinstr()   <= Copies a string into a specific location in scratch
+bsd/kern/kern_xxx.c:		error = copyinstr(uap->command,
+bsd/kern/posix_shm.c:	error = copyinstr(uap->name, (void *)pnbuf, MAXPATHLEN, &pathlen);
+bsd/kern/posix_shm.c:	error = copyinstr(uap->name, (void *)pnbuf, MAXPATHLEN, &pathlen);
+bsd/kern/kern_exec.c: *		!0			Failure errno from copyinstr()
+bsd/kern/kern_exec.c:			error = copyinstr(str, imgp->ip_strendp, imgp->ip_strspace,
+bsd/kern/kern_exec.c:		error = copyinstr(path, imgp->ip_strings, len, &len);
+bsd/kern/kern_descrip.c:		if ( (error = copyinstr(argp, pathbufp, MAXPATHLEN, &pathlen)) == 0 ) {
+bsd/kern/subr_sbuf.c:	switch (copyinstr(CAST_USER_ADDR_T(uaddr), s->s_buf + s->s_len, len + 1, &done)) {
+bsd/kern/posix_sem.c:	error = copyinstr(uap->name, pnbuf, MAXPATHLEN, &pathlen);
+bsd/kern/posix_sem.c:	error = copyinstr(uap->name, pnbuf, MAXPATHLEN, &pathlen);
+bsd/kern/kern_prot.c: *	copyinstr:EFAULT			User buffer invalid
+bsd/kern/kern_prot.c: *	copyinstr:EINVAL			Supplied name was too long
+bsd/kern/kern_prot.c:	error = copyinstr(uap->namebuf,
+bsd/vfs/vfs_syscalls.c:	error = copyinstr(uap->type, fstypename, MFSNAMELEN, &dummy);
+bsd/vfs/vfs_syscalls.c:		error = copyinstr(mac.m_string, labelstr, mac.m_buflen, &ulen);
+bsd/vfs/vfs_syscalls.c:		error = copyinstr(uap->arg, datap, MAXPATHLEN, &fnamelen);
+bsd/vfs/vfs_syscalls.c:	error = copyinstr(uap->path, path, MAXPATHLEN, &dummy);
+bsd/vfs/vfs_syscalls.c:		error = copyinstr(uap->to, tobuf, MAXPATHLEN, &len);
+bsd/vfs/vfs_syscalls.c:	if ((error = copyinstr(uap->attrname, attrname, sizeof(attrname), &namelen) != 0)) {
+bsd/vfs/vfs_syscalls.c:	if ((error = copyinstr(uap->attrname, attrname, sizeof(attrname), &namelen) != 0)) {
+bsd/vfs/vfs_syscalls.c:	if ((error = copyinstr(uap->attrname, attrname, sizeof(attrname), &namelen) != 0)) {
+bsd/vfs/vfs_syscalls.c:	if ((error = copyinstr(uap->attrname, attrname, sizeof(attrname), &namelen) != 0)) {
+bsd/vfs/vfs_syscalls.c:	error = copyinstr(uap->attrname, attrname, sizeof(attrname), &namelen);
+bsd/vfs/vfs_syscalls.c:	error = copyinstr(uap->attrname, attrname, sizeof(attrname), &namelen);
+bsd/vfs/vfs_lookup.c: *		copyinstr:EFAULT	Bad address
+bsd/vfs/vfs_lookup.c: *		copyinstr:ENAMETOOLONG	Filename too long
+bsd/vfs/vfs_lookup.c:		error = copyinstr(ndp->ni_dirp, cnp->cn_pnbuf,
+bsd/dev/ppc/fbt_ppc.c:	"copyinstr",
+bsd/dev/dtrace/dtrace_glue.c:dtrace_copyinstr(user_addr_t src, uintptr_t dst, size_t len, volatile uint16_t *flags)
+bsd/dev/dtrace/dtrace_glue.c:		int error = copyinstr((const user_addr_t)src, (char *)dst, (vm_size_t)len, &actual);
+bsd/dev/dtrace/dtrace.c:		dtrace_copyinstr(tupregs[0].dttk_value, dest, size, flags);
+bsd/dev/dtrace/dtrace.c:			dtrace_copyinstr(tupregs[0].dttk_value, dest, size, flags);
+bsd/dev/dtrace/dtrace.c: * 1. Make calls to subroutines other than copyin(), copyinstr() or
+bsd/dev/i386/fbt_x86.c:	"copyinstr",
+bsd/miscfs/union/union_vfsops.c:	(void) copyinstr(args.target, vcp, len - 1, (size_t *)&size);
+bsd/miscfs/nullfs/null_vfsops.c:	(void) copyinstr(args.target, mp->mnt_vfsstat.f_mntfromname, MAXPATHLEN - 1, 
+bsd/libkern/libkern.h:int	copyinstr(const user_addr_t uaddr, void *kaddr, size_t len, size_t *done);
+bsd/man/man9/Makefile:	copyinstr.9	\
+bsd/man/man9/copy.9:.Nm copyinstr ,
+bsd/man/man9/copy.9:.Fo copyinstr
+bsd/man/man9/copy.9:.It Fn copyinstr
+bsd/man/man9/copy.9:.Fn copyinstr ,
+bsd/man/man9/copy.9:.Fn copyinstr
+bsd/man/man9/copy.9:.\" .Fn copyinstr ,
+bsd/man/man9/copy.9:.Fn copyinstr
+bsd/nfs/nfs_vfsops.c:	error = copyinstr(args.hostname, mntfrom, MAXPATHLEN-1, &len);
+bsd/nfs/nfs_subs.c:		error = copyinstr(unxa->nxa_fspath, path, MAXPATHLEN, (size_t *)&pathlen);
+bsd/nfs/nfs_subs.c:	error = copyinstr(unxa->nxa_fspath, path, MAXPATHLEN, (size_t *)&pathlen);
+bsd/nfs/nfs_subs.c:		error = copyinstr(unxa->nxa_exppath, path, MAXPATHLEN, (size_t *)&pathlen);
+bsd/nfs/nfs_syscalls.c:	error = copyinstr(uap->fname, path, MAXPATHLEN, (size_t *)&pathlen);
+config/Libkern.exports:_copyinstr
+osfmk/x86_64/loose_ends.c:copyinstr(const user_addr_t user_addr,  char *kernel_addr, vm_size_t nbytes, vm_size_t *lencopied)
+osfmk/kern/misc_protos.h:extern int copyinstr(
+osfmk/ppc/movc.s:// Stack frame format used by copyin, copyout, copyinstr and copyoutstr.
+osfmk/ppc/movc.s: * copyinstr(src, dst, maxcount, count)
+osfmk/ppc/movc.s: * Only currently called from klcopyinstr. 
+osfmk/ppc/movc.s:ENTRY(copyinstr, TAG_NO_FRAME_USED)
+osfmk/ppc/movc.s:copyJoin1:										// enter from copyinstr with kkNull set
+osfmk/ppc/movc.s:        bt		kkString,copyString				// handle copyinstr and copyoutstr
+osfmk/ppc/movc.s:// Main exit point for copyin, copyout, copyinstr, and copyoutstr.  Also reached
+osfmk/ppc/movc.s: * copyin, copyout, copyinstr, and copyoutstr.  Registers are as
+osfmk/ppc/movc.s:// Handle copyinstr and copyoutstr.  At this point the stack frame is set up,
+osfmk/ppc/movc.s://		r3 = source ptr, mapped if copyinstr
+osfmk/ppc/movc.s:        blt--   cr1,copyinstr8					// too short for word loop
+osfmk/ppc/movc.s:        bt--	kkNull,copyinstr5enter          // enter loop that just counts
+osfmk/ppc/movc.s:        bdnzt   cr0_eq,copyinstr6               // use loop that copies if 0 not found
+osfmk/ppc/movc.s:        b		copyinstr7                      // 0 found (buffer can't be full)
+osfmk/ppc/movc.s:copyinstr5:										// version that counts but does not copy
+osfmk/ppc/movc.s:copyinstr5enter:
+osfmk/ppc/movc.s:        bdnzt   cr0_eq,copyinstr5				// if r7==0, then all bytes in r8 are nonzero
+osfmk/ppc/movc.s:        b		copyinstr7
+osfmk/ppc/movc.s:copyinstr6:										// version that counts and copies
+osfmk/ppc/movc.s:        bdnzt	cr0_eq,copyinstr6				// if r7==0, then all bytes are nonzero
+osfmk/ppc/movc.s:copyinstr7:
+osfmk/ppc/movc.s:        bt++	kkZero,copyinstr10				// 0 found, so done
+osfmk/ppc/movc.s:        beq		copyinstr10						// r6==0, so buffer truly full
+osfmk/ppc/movc.s:        b		copyinstr8						// enter byte loop for last 1-3 leftover bytes
+osfmk/ppc/movc.s:copyinstr8:										// loop over bytes of source
+osfmk/ppc/movc.s:        bt--	kkNull,copyinstr9				// don't store if copyinstr with NULL ptr
+osfmk/ppc/movc.s:copyinstr9:
+osfmk/ppc/movc.s:        bdnzf	cr0_eq,copyinstr8				// loop if byte not 0 and more room in buffer
+osfmk/ppc/movc.s:copyinstr10:
+osfmk/i386/locore.s:Entry(copyinstr_kern)
+osfmk/i386/locore.s:	jmp	copyinstr_common	
+osfmk/i386/locore.s:Entry(copyinstr_user)
+osfmk/i386/locore.s:copyinstr_common:
+osfmk/i386/loose_ends.c:extern int copyinstr_user(const vm_offset_t, char *, vm_size_t, vm_size_t *);
+osfmk/i386/loose_ends.c:extern int copyinstr_kern(const vm_offset_t, char *, vm_size_t, vm_size_t *);
+osfmk/i386/loose_ends.c:		        error = copyinstr_kern(kern_vaddr, kernel_addr, nbytes, lencopied);
+osfmk/i386/loose_ends.c:		        error = copyinstr_user(user_offset, kernel_addr, cnt, &bytes_copied);
+osfmk/i386/loose_ends.c:copyinstr(const user_addr_t user_addr,  char *kernel_addr, vm_size_t nbytes, vm_size_t *lencopied)
+security/mac_net.c:	error = copyinstr(CAST_USER_ADDR_T(mac.m_string), elements,
+security/mac_net.c:	error = copyinstr(CAST_USER_ADDR_T(mac.m_string), buffer,
+security/mac_process.c:	error = copyinstr(CAST_USER_ADDR_T(mac.m_string), buffer, mac.m_buflen, &ulen);
+security/mac_base.c:	error = copyinstr(mac.m_string, elements, mac.m_buflen, &ulen);
+security/mac_base.c:	error = copyinstr(mac.m_string, elements, mac.m_buflen, &ulen);
+security/mac_base.c:	error = copyinstr(mac.m_string, buffer, mac.m_buflen, &ulen);
+security/mac_base.c:	error = copyinstr(mac.m_string, elements, mac.m_buflen, &ulen);
+security/mac_base.c:	error = copyinstr(mac.m_string, elements, mac.m_buflen, &ulen);
+security/mac_base.c:	error = copyinstr(mac.m_string, buffer, mac.m_buflen, &ulen);
+security/mac_base.c:	error = copyinstr(mac.m_string, elements, mac.m_buflen, &ulen);
+security/mac_base.c:	error = copyinstr(mac.m_string, elements, mac.m_buflen, &ulen);
+security/mac_base.c:	error = copyinstr(mac.m_string, buffer, mac.m_buflen, &ulen);
+security/mac_base.c:	error = copyinstr(mac.m_string, buffer, mac.m_buflen, &ulen);
+security/mac_base.c:	error = copyinstr(uap->policy, target, sizeof(target), &ulen);
+security/mac_base.c:	error = copyinstr(mac.m_string, elements, mac.m_buflen, &ulen);
+security/mac_socket.c:	error = copyinstr(CAST_USER_ADDR_T(mac->m_string), buffer,
+security/mac_socket.c:	error = copyinstr(CAST_USER_ADDR_T(mac->m_string), elements,
+security/mac_socket.c:	error = copyinstr(CAST_USER_ADDR_T(mac->m_string), elements,

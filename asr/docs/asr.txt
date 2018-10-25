@@ -1,0 +1,57 @@
+/usr/sbin/asr
+Multicast Server/Client Hybrid
+used to install disk image over com.apple.restored service
+
+=Commands=
+"Transfer Debug"
+XDBG	OOB retransmit %qd length %ld
+XDBG	failed request for %lu bytes at position %llu
+
+"Transfer Error"
+XERR	Mounted volume!
+
+"Transfer Status"
+XSTA	%s
+XSTA	Error: %s
+XSTA	Retry %sm
+XSTA	fail
+XSTA	fail: checksum failure
+XSTA	fail: packet loss
+XSTA	fail: stream timed out
+XSTA	finish
+XSTA	fsck
+XSTA	fsck recovery
+XSTA	metadata
+XSTA	pass %d
+XSTA	restore
+XSTA	setup
+XSTA	start	%g	adjust
+XSTA	start	%g	client
+XSTA	start	%g	multicast-client
+XSTA	start	%g	multicast-server
+XSTA	start	%g	thaw
+XSTA	thaw
+XSTA	verify
+XSTA	wait
+
+"Transfer ??"
+XVDG	forward error correction at %llu
+XVDG	missed stream data %ld packets at position %lld
+XVDG	streambuffer blocked
+
+"Progress Info"
+PINF	%d	100	%s
+PINF	%d	100	verify
+
+"Proress Stop"
+PSTP	100	100	stop fsck %s
+PSTP	100	100	stop restore
+PSTP	100	100	stop restore%s
+PSTP	100	100	stop verify
+
+"Progress Start"
+PSTT	0	100	start fsck %s
+PSTT	0	100	start restore
+PSTT	0	100	start restore loop
+PSTT	0	100	start restore retry
+PSTT	0	100	start verify

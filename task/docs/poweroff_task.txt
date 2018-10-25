@@ -1,0 +1,35 @@
+poweroff task:
+0x0:  6B 73 61 74 - 0x7461736B "task" // task_start_magic
+0x4:  2C 19 FB 4F - 0x4FFB192C // something in upper stack
+0x8:  8C DB F4 4F - 0x4FF4DB8C // something in lower stack
+0xC:  20 93 F2 4F - 0x4FF29320 // some kind of linked list
+0x10: 20 93 F2 4F - 0x4FF29320 // looks like the other half of a linked list
+0x14: 01 00 00 00 - 1 // is critical section?
+0x18: 02 00 00 00 - 2 // is irq/fiq enabled?
+0x1C: 04 C1 F2 4F - 0x4FF2C104
+0x20: 88 92 F2 4F - 0x4FF29288
+0x24: 00 00 00 00 - 0
+0x28: E8 18 FB 4F - 0x4FFB18E8
+0x2C: 00 00 00 00 
+0x30: 00 00 00 00 
+0x34: 00 00 00 00 
+0x38: 00 00 00 00 
+0x3C: E0 18 FB 4F 
+0x40: A9 91 F1 4F - 0x4FF191A9 //LR or PC?
+0x44: 00 00 00 00 
+0x48: 00 00 00 00 
+0x4C: 4C 98 7A 4A 
+0x50: 03 00 00 00 
+0x54: 10 27 00 00 
+0x58: 00 00 00 00 
+0x5C: 3D 8F F1 4F - 0x4FF18F3D
+0x60: 80 16 FB 4F 
+0x64: E4 16 FB 4F - 0x4FFB16E4 //previous_task?
+0x68: E4 16 FB 4F - 0x4FFB16E4 //next_task?
+0x6C: 00 00 00 00 - 0
+0x70: E1 0E F0 4F - 0x4FF00EE1 //task_handler
+0x74: 00 00 00 00 - 0 //task_priority
+0x78: 20 17 FB 4F - 0x4FFB1720 //task_memory
+0x7C: 00 02 00 00 - 0x200  //task_memory_size
+0x80: 70 6F 77 65 72 6F 66 66 00 00 00 00 00 00 00 00 - "poweroff" //task_name
+0x90: 32 6B 73 74 - 0x74736B32 "tsk2" //task_stop_magic

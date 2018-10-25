@@ -1,0 +1,92 @@
+0x8124000C = 1 << (bank & 7)                     - nand_set_fmctrl0
+0x81240014 = 0xFF                                - nand_send_cmd(CMD_RESET)
+0x81240010 = 1                                   - FMCTRL1
+status = wait_for_done(fmi, 0x40044, 1, 1)
+0x8124000C = 0                                      - nand_set_fmctrl0
+return (((status - 1) & ~(status)) >> 0x1F) ^ 1
+
+get_chip_type?
+0x8124000C = (1 << (bank & 0x7))                 nand_set_fmctrl0
+0x81240014 = 0x90                                - nand_send_cmd
+0x81240018 = 0                                     FMANUM !!!
+0x81200014 = 0                                  FMADDR0 = 0;
+0x81240010 = 0x9                                 FMCTRL1
+status = wait_for_done(fmi, 0x40044, 0x9, 0x9)
+	0x40024
+	0x40010                    FMCTRL1
+	0x40048
+0x4000C                                           nand_set_fmctrl0
+
+0x812000C = 1 << (bank & 7)
+0x81240014 = 0x3000                              - nand_send_cmd
+0x81240010 = 0xB                                 FMCTRL1
+status = wait_for_done(fmi, 0x40044, 0x81240010, 0xB)
+0x81240008 &= 0xFFEFFFFF
+0x8124004C = 0x4040
+0x81240014 = 0x70                                nand_send_cmd
+0x81240010 = 0x1                                  FMCTRL1
+wait_for_done(fmi, 0x40044, 0x1, 0x1)
+0x81240044 = 0x20
+0x81240024 = 0
+0x81200034 = 0x50
+wait_for_done(fmi, 0x40044, 0x20, 0x20)
+0x81240010 = 0                                   FMANUM ??
+0x81240014 = 0                                    nand_send_cmd
+0x81240010 = 1                                    FMANUM ??
+wait_for_done   ; fmi, 0x40044, 0x1, 0x1
+0x81200000 = 0xF0
+fmi->unk34 = 0x20001
+0x81280008 = 0
+0x81280014 = 0
+
+start_outter_loop1
+0x81280010 = 0x128
+0x8128000C = 1
+
+innterloop
+0x81200004 = 0x3
+dma_wait_task_pending()
+
+tightloop
+r1 = 0x81200014
+end
+end
+stop_outter_loop1
+
+=second half=
+0x812000C = 1 << (bank & 7)
+0x81240014 = 0x3000                                 nand_send_cmd
+0x81240010 = 0xB                                    FMANUM ??
+status = wait_for_done(fmi, 0x40044, 0x81240010, 0xB)
+0x81240008 &= 0xFFEFFFFF
+0x8124004C = 0x4040
+0x81240014 = 0x70                                   nand_send_cmd
+0x81240010 = 0x1                                      FMANUM ??
+wait_for_done(fmi, 0x40044, 0x1, 0x1)
+0x81240044 = 0x20
+0x81240024 = 0
+0x81200034 = 0x50
+wait_for_done(fmi, 0x40044, 0x20, 0x20)
+0x81240010 = 0                                      FMANUM ??
+0x81240014 = 0                                      nand_send_cmd
+0x81240010 = 1                                     FMANUM ??
+wait_for_done   ; fmi, 0x40044, 0x1, 0x1
+0x81200000 = 0xF0                        FMI0_CONFIG?  ctrl0?
+fmi->unk34 = 0x20001
+0x81280008 = 0                         ECC?
+0x81280014 = 0                         ECC?
+
+
+0x81280010 = 0x128
+0x8128000C = 1
+
+0x81200004 = 0x3
+
+nand_read_sector:
+dma_wait_task_pending()
+while read 0x81200014
+
+if((*0x81280010 & 8) > 0)
+0x81280010 << 0x17
+
+0x8124000C = (0x81280010 & 8)                      nand_set_fmctrl0

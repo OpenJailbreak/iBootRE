@@ -1,0 +1,8 @@
+<chronic> 00000000 images_get_struct struc ; (sizeof=0x18)
+<chronic> 00000000 dataSectionSize DCD ?
+<chronic> 00000004 totalSize       DCD ?
+<chronic> 00000008 ImageIden       DCD ?
+<chronic> 0000000C imageTypeImg3   DCD ?
+<chronic> 00000010 field_10        DCD ?
+<chronic> 00000014 self_pointer    DCD ?
+<chronic> 00000018 images_get_struct ends

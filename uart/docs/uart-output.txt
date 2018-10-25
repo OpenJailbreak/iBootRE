@@ -1,0 +1,68 @@
+Nicolas-Haunolds-iPhone-3G:~ root# minicom
+
+
+Welcome to minicom 2.2
+
+OPTIONS: 
+Port /dev/tty.iap
+
+                 Press CTRL-A Z for help on special keys
+
+Idle power off.                                      
+merlot_quiesce()                                     
+SysCfg: version 0x00010001 with 5 entries using 124 of 8192 bytes
+BDEV: protecting 0x2000-0x8000                       
+image 0x1802f808: bdev 0x1802f590 type ibot offset 0x20000 len 0x280f8
+image 0x1802f840: bdev 0x1802f590 type dtre offset 0x48dc0 len 0x9838
+image 0x1802f880: bdev 0x1802f590 type logo offset 0x532c0 len 0x1d38
+image 0x1802f8c0: bdev 0x1802f590 type recm offset 0x55cc0 len 0xb2b8
+image 0x1802f900: bdev 0x1802f590 type nsrv offset 0x61c40 len 0x4778
+image 0x1802f940: bdev 0x1802f590 type bat0 offset 0x67080 len 0xd578
+image 0x1802f980: bdev 0x1802f590 type bat1 offset 0x752c0 len 0xf6b8
+image 0x1802f9c0: bdev 0x1802f590 type glyC offset 0x85640 len 0x46f8
+image 0x1802fa00: bdev 0x1802f590 type glyP offset 0x8aa00 len 0x4338
+image 0x1802fa40: bdev 0x1802f590 type chg0 offset 0x8fa00 len 0x44b8
+image 0x1802fa80: bdev 0x1802f590 type chg1 offset 0x94b80 len 0x58f8
+image 0x1802fac0: bdev 0x1802f590 type batF offset 0x9b140 len 0x120f8          
+otf clock divisor 5                                                             
+fps set to: 59.977                                                              
+SFN: 0x600, Addr: 0xfd00000, Size: 0x14001e0, hspan: 0x500, QLEN: 0x140         
+merlot_init() -- Universal code version 11-29-07                                
+Merlot Panel ID (0x72c200):                                                     
+   Build:          PVT2                                                         
+   Type:           TMD                                                          
+   Project/Driver: M68/NSC-Merlot                                               
+Original value of Vcs (0x47): 0x0b                                              
+paint_install_gamma_table: Found Gamma table 0x0000c200 / 0x0000ff70            
+
+
+=======================================                                         
+::                                                                              
+:: iRain for m68ap, Copyright 2009, Apple Inc.                                  
+::                                                                              
+::      BUILD_TAG: iBoot-636.66                                                 
+::                                                                              
+::      BUILD_STYLE: RELEASE                                                    
+::                                                                              
+::      USB_SERIAL_NUMBER: CPID:8900 CPRV:20 CPFM:03 SCEP:05 BDID:00 ECID:00000]
+::                                                                              
+=======================================                                         
+
+[FTL:MSG] Apple NAND Driver (AND) RO                                            
+[NAND] Device ID           0xb614d5ec                                           
+[NAND] BANKS_TOTAL         4                                                    
+[NAND] BLOCKS_PER_BANK     4096                                                 
+[NAND] PAGES_PER_BANK      524288                                               
+[NAND] SECTORS_PER_PAGE    8                                                    
+[NAND] BYTES_PER_SPARE     128                                                  
+[FTL:MSG] FIL_Init            [OK]                                              
+[FTL:MSG] BUF_Init            [OK]                                              
+[FTL:MSG] FPart Init          [OK]                                              
+read old style signature 0x43303035 (line:371)                                  
+[FTL:MSG] VFL Register    [OK]                                                  
+[FTL:MSG] VFL Init            [OK]                                              
+[FTL:MSG] VFL_Open            [OK]                                              
+[FTL:MSG] FTL Register    [OK]                                                  
+[FTL:MSG] FTL_Open            [OK]                                              
+Boot Failure Count: 0   Panic Fail Count: 0                                     
+Entering recovery mode, starting command prompt
